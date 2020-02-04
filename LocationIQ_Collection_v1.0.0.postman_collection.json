@@ -61,7 +61,7 @@
 						},
 						{
 							"key": "countrycodes",
-							"value": "",
+							"value": "us",
 							"description": "Limit search to a list of countries. ",
 							"disabled": true
 						},
@@ -166,27 +166,27 @@
 						{
 							"key": "street",
 							"value": "20 W 34th St",
-							"description": "Type the street number, in case street number is not directly present type house number and road number separated by commas."
+							"description": "Street Number to search for."
 						},
 						{
 							"key": "city",
 							"value": "New York",
-							"description": "Add ciy name."
+							"description": "City name to search for."
 						},
 						{
 							"key": "county",
 							"value": "New York County",
-							"description": "Add county name."
+							"description": "County name to search for."
 						},
 						{
 							"key": "state",
 							"value": "New York",
-							"description": "Add state name."
+							"description": "State name to search for."
 						},
 						{
 							"key": "country",
 							"value": "United States of America",
-							"description": "Add country name in full."
+							"description": "Country name to search for."
 						},
 						{
 							"key": "postalcode",

@@ -1,0 +1,1343 @@
+{
+	"info": {
+		"_postman_id": "2ee638c5-159f-4592-89f0-fa004aede1f9",
+		"name": "LocationIQ Collection v1.0.0",
+		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search/Forward Free-Form Geocoding API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&addressdetails=1",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"search.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Your API Key"
+						},
+						{
+							"key": "q",
+							"value": "Empire State Building",
+							"description": "Free-form query string to search for. Commas are optional, but improves performance by reducing the complexity of the search. Do not combine with structured/postalcode parameters"
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"description": "Output Format [json | xml]"
+						},
+						{
+							"key": "viewbox",
+							"value": "-132.84908,47.69382,-70.44674,30.82531",
+							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
+							"disabled": true
+						},
+						{
+							"key": "bounded",
+							"value": "1",
+							"description": "Restrict the results to only items contained with the viewbox",
+							"disabled": true
+						},
+						{
+							"key": "addressdetails",
+							"value": "1",
+							"description": "Include a breakdown of the address into elements. Defaults to 0"
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]",
+							"disabled": true
+						},
+						{
+							"key": "countrycodes",
+							"value": "",
+							"description": "Limit search to a list of countries. ",
+							"disabled": true
+						},
+						{
+							"key": "namedetails",
+							"value": "1",
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+							"disabled": true
+						},
+						{
+							"key": "dedupe",
+							"value": "1",
+							"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+							"disabled": true
+						},
+						{
+							"key": "json_callback",
+							"value": "",
+							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+							"disabled": true
+						},
+						{
+							"key": "polygon",
+							"value": "",
+							"description": "Output polygon outlines for items found",
+							"disabled": true
+						},
+						{
+							"key": "polygon_geojson",
+							"value": "",
+							"description": "Output geometry of results in geojson format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_kml",
+							"value": "",
+							"description": "Output geometry of results in kml format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_svg",
+							"value": "",
+							"description": "Output geometry of results in svg format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_text",
+							"value": "",
+							"description": "Output geometry of results as a WKT.",
+							"disabled": true
+						},
+						{
+							"key": "extratags",
+							"value": "0",
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+							"disabled": true
+						},
+						{
+							"key": "exclude_place_ids",
+							"value": "",
+							"description": "If you do not want certain OSM objects to appear in the search result, give a comma separated list of the place_ids you want to skip. This can be used to broaden search results. For example, if a previous query only returned a few results, then including those here would cause the search to return other, less accurate, matches (if possible).",
+							"disabled": true
+						},
+						{
+							"key": "normalizecity",
+							"value": "",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
+							"disabled": true
+						},
+						{
+							"key": "statecode",
+							"value": "1",
+							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+							"disabled": true
+						}
+					]
+				},
+				"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding\nIt takes free form query string to search, commas are optional but improves performance by reducing the complexity of the search."
+			},
+			"response": []
+		},
+		{
+			"name": "Search/Forward Structured Geocoding API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json&addressdetails=1",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"search.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Your API Key"
+						},
+						{
+							"key": "street",
+							"value": "20 W 34th St",
+							"description": "Type the street number, in case street number is not directly present type house number and road number separated by commas."
+						},
+						{
+							"key": "city",
+							"value": "New York",
+							"description": "Add ciy name."
+						},
+						{
+							"key": "county",
+							"value": "New York County",
+							"description": "Add county name."
+						},
+						{
+							"key": "state",
+							"value": "New York",
+							"description": "Add state name."
+						},
+						{
+							"key": "country",
+							"value": "United States of America",
+							"description": "Add country name in full."
+						},
+						{
+							"key": "postalcode",
+							"value": "10001",
+							"description": "Alternative query string format for postal code requests that uses a special postal code dataset for geocoding. Do not combine with q=<query> or other structured parameters for postal code search. Combine with countrycodes=<countrycode> parameter for a better response"
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"description": "Output Format [json | xml]"
+						},
+						{
+							"key": "viewbox",
+							"value": "-132.84908,47.69382,-70.44674,30.82531",
+							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
+							"disabled": true
+						},
+						{
+							"key": "bounded",
+							"value": "1",
+							"description": "Restrict the results to only items contained with the viewbox",
+							"disabled": true
+						},
+						{
+							"key": "addressdetails",
+							"value": "1",
+							"description": "Include a breakdown of the address into elements. Defaults to 0"
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]",
+							"disabled": true
+						},
+						{
+							"key": "countrycodes",
+							"value": "us",
+							"description": "Limit search to a list of countries. ",
+							"disabled": true
+						},
+						{
+							"key": "namedetails",
+							"value": "1",
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+							"disabled": true
+						},
+						{
+							"key": "dedupe",
+							"value": "1",
+							"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+							"disabled": true
+						},
+						{
+							"key": "json_callback",
+							"value": "",
+							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+							"disabled": true
+						},
+						{
+							"key": "polygon",
+							"value": "",
+							"description": "Output polygon outlines for items found",
+							"disabled": true
+						},
+						{
+							"key": "polygon_geojson",
+							"value": "",
+							"description": "Output geometry of results in geojson format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_kml",
+							"value": "",
+							"description": "Output geometry of results in kml format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_svg",
+							"value": "",
+							"description": "Output geometry of results in svg format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_text",
+							"value": "",
+							"description": "Output geometry of results as a WKT.",
+							"disabled": true
+						},
+						{
+							"key": "extratags",
+							"value": "0",
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+							"disabled": true
+						},
+						{
+							"key": "exclude_place_ids",
+							"value": "",
+							"description": "If you do not want certain OSM objects to appear in the search result, give a comma separated list of the place_ids you want to skip. This can be used to broaden search results. For example, if a previous query only returned a few results, then including those here would cause the search to return other, less accurate, matches (if possible).",
+							"disabled": true
+						},
+						{
+							"key": "normalizecity",
+							"value": "",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
+							"disabled": true
+						},
+						{
+							"key": "statecode",
+							"value": "0",
+							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+							"disabled": true
+						}
+					]
+				},
+				"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding.\nIt takes structured address as input."
+			},
+			"response": []
+		},
+		{
+			"name": "Search/Forward PostalCode Geocoding API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json&addressdetails=1",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"search.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Your API Key"
+						},
+						{
+							"key": "postalcode",
+							"value": "10001",
+							"description": "Alternative query string format for postal code requests that uses a special postal code dataset for geocoding. Do not combine with q=<query> or other structured parameters for postal code search. Combine with countrycodes=<countrycode> parameter for a better response"
+						},
+						{
+							"key": "countrycodes",
+							"value": "us",
+							"description": "Limit search to a list of countries. "
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"description": "Output Format [json | xml]"
+						},
+						{
+							"key": "viewbox",
+							"value": "-132.84908,47.69382,-70.44674,30.82531",
+							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
+							"disabled": true
+						},
+						{
+							"key": "bounded",
+							"value": "1",
+							"description": "Restrict the results to only items contained with the viewbox",
+							"disabled": true
+						},
+						{
+							"key": "addressdetails",
+							"value": "1",
+							"description": "Include a breakdown of the address into elements. Defaults to 0"
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]",
+							"disabled": true
+						},
+						{
+							"key": "namedetails",
+							"value": "1",
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+							"disabled": true
+						},
+						{
+							"key": "dedupe",
+							"value": "1",
+							"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+							"disabled": true
+						},
+						{
+							"key": "json_callback",
+							"value": "",
+							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+							"disabled": true
+						},
+						{
+							"key": "polygon",
+							"value": "",
+							"description": "Output polygon outlines for items found",
+							"disabled": true
+						},
+						{
+							"key": "polygon_geojson",
+							"value": "",
+							"description": "Output geometry of results in geojson format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_kml",
+							"value": "",
+							"description": "Output geometry of results in kml format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_svg",
+							"value": "",
+							"description": "Output geometry of results in svg format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_text",
+							"value": "",
+							"description": "Output geometry of results as a WKT.",
+							"disabled": true
+						},
+						{
+							"key": "extratags",
+							"value": "0",
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+							"disabled": true
+						},
+						{
+							"key": "exclude_place_ids",
+							"value": "",
+							"description": "If you do not want certain OSM objects to appear in the search result, give a comma separated list of the place_ids you want to skip. This can be used to broaden search results. For example, if a previous query only returned a few results, then including those here would cause the search to return other, less accurate, matches (if possible).",
+							"disabled": true
+						},
+						{
+							"key": "normalizecity",
+							"value": "",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
+							"disabled": true
+						},
+						{
+							"key": "statecode",
+							"value": "0",
+							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+							"disabled": true
+						}
+					]
+				},
+				"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding.\nIt takes postalcode & countrycode as input."
+			},
+			"response": []
+		},
+		{
+			"name": "Reverse Geocoding API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"reverse.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Authentication key."
+						},
+						{
+							"key": "lat",
+							"value": "40.7487727",
+							"description": "Latitude of the location to generate an address for."
+						},
+						{
+							"key": "lon",
+							"value": "-73.9849336",
+							"description": "Longitude of the location to generate an address for."
+						},
+						{
+							"key": "zoom",
+							"value": "",
+							"description": "Level of detail required where 0 is country and 18 is house/building. Defaults to 18. A lower number increases speed of the server's response. ",
+							"disabled": true
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"description": "Output Format. Defaults to xml"
+						},
+						{
+							"key": "addressdetails",
+							"value": "1",
+							"description": "Include a breakdown of the address into elements. Defaults to 1.",
+							"disabled": true
+						},
+						{
+							"key": "namedetails",
+							"value": "0",
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+							"disabled": true
+						},
+						{
+							"key": "accept_language",
+							"value": "en",
+							"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. ",
+							"disabled": true
+						},
+						{
+							"key": "osm_type",
+							"value": "",
+							"description": "A specific osm type, node / way / relation to search an address for [ N, W , R ], only applicable when neither (lat lon) is present. That is use in combination osm_id and osm_type or lat and lon to get result",
+							"disabled": true
+						},
+						{
+							"key": "osm_id",
+							"value": "",
+							"description": "A specific osm node / way / relation to return an address for",
+							"disabled": true
+						},
+						{
+							"key": "json_callback",
+							"value": "",
+							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_geojson",
+							"value": "",
+							"description": "Output geometry of results in geojson format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_kml",
+							"value": "",
+							"description": "Output geometry of results in kml format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_svg",
+							"value": "",
+							"description": "Output geometry of results in svg format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_text",
+							"value": "",
+							"description": "Output geometry of results as a WKT.",
+							"disabled": true
+						},
+						{
+							"key": "extratags",
+							"value": "0",
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
+			},
+			"response": []
+		},
+		{
+			"name": "Reverse Geocoding API OSM ID & Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"reverse.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Authentication key."
+						},
+						{
+							"key": "osm_type",
+							"value": "W",
+							"description": "A specific osm type, node / way / relation to search an address for [ N, W , R ], only applicable when neither (lat lon) is present. That is use in combination osm_id and osm_type or lat and lon to get result"
+						},
+						{
+							"key": "osm_id",
+							"value": "34633854",
+							"description": "A specific osm node / way / relation to return an address for"
+						},
+						{
+							"key": "zoom",
+							"value": "",
+							"description": "Level of detail required where 0 is country and 18 is house/building. Defaults to 18. A lower number increases speed of the server's response. ",
+							"disabled": true
+						},
+						{
+							"key": "format",
+							"value": "json",
+							"description": "Output Format. Defaults to xml"
+						},
+						{
+							"key": "addressdetails",
+							"value": "1",
+							"description": "Include a breakdown of the address into elements. Defaults to 1.",
+							"disabled": true
+						},
+						{
+							"key": "namedetails",
+							"value": "0",
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+							"disabled": true
+						},
+						{
+							"key": "accept_language",
+							"value": "en",
+							"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. ",
+							"disabled": true
+						},
+						{
+							"key": "json_callback",
+							"value": "",
+							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_geojson",
+							"value": "",
+							"description": "Output geometry of results in geojson format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_kml",
+							"value": "",
+							"description": "Output geometry of results in kml format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_svg",
+							"value": "",
+							"description": "Output geometry of results in svg format.",
+							"disabled": true
+						},
+						{
+							"key": "polygon_text",
+							"value": "",
+							"description": "Output geometry of results as a WKT.",
+							"disabled": true
+						},
+						{
+							"key": "extratags",
+							"value": "0",
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Reverse geocoding with OSM ID & Type is the process of converting an object represented by OSM ID and Type ( node, way and relations [N,W,R] ) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
+			},
+			"response": []
+		},
+		{
+			"name": "Autocomplete API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete.php?key={{Your_API_Key}}&q=Empire State",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"autocomplete.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Your API key"
+						},
+						{
+							"key": "q",
+							"value": "Empire State",
+							"description": "Query string to search for"
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "Limit the number of returned results. Default is 10.",
+							"disabled": true
+						},
+						{
+							"key": "viewbox",
+							"value": "-132.84908,47.69382,-70.44674,30.82531",
+							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. Currently, this option in the Autocomplete API only increases weigtage of results inside the viewbox. It does not restrict results to this box.",
+							"disabled": true
+						},
+						{
+							"key": "bounded",
+							"value": "",
+							"description": "Restrict result to items contained within the bounds specified in the viewbox parameter [0] [1]",
+							"disabled": true
+						},
+						{
+							"key": "countrycodes",
+							"value": "us",
+							"description": "Limit search to a specific of country.",
+							"disabled": true
+						},
+						{
+							"key": "json_callback",
+							"value": "",
+							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>)",
+							"disabled": true
+						},
+						{
+							"key": "normalizecity",
+							"value": "1",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
+							"disabled": true
+						},
+						{
+							"key": "accept-language",
+							"value": "en",
+							"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
+			},
+			"response": []
+		},
+		{
+			"name": "Balance API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance.php?Key={{Your_API_Key}}",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"balance.php"
+					],
+					"query": [
+						{
+							"key": "Key",
+							"value": "{{Your_API_Key}}"
+						}
+					]
+				},
+				"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC)."
+			},
+			"response": []
+		},
+		{
+			"name": "Nearby-Points of Interest API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&radius=3000&tag=railway_station&limit=10",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"nearby.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Authentication Key"
+						},
+						{
+							"key": "lat",
+							"value": "40.7484284",
+							"description": "Latitude of the location to generate the PoI list for."
+						},
+						{
+							"key": "lon",
+							"value": "-73.9856546",
+							"description": "Longitude of the location to generate the PoI list for."
+						},
+						{
+							"key": "radius",
+							"value": "3000",
+							"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters."
+						},
+						{
+							"key": "tag",
+							"value": "railway_station",
+							"description": "PoI to generate the list for. Defaults to country (check Nearby-Countries). "
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "No of results to look for. Defaults to 10. Max value is 50. (Pagination is not supported yet)."
+						}
+					]
+				},
+				"description": "The Nearby Points of Interest (PoI) API returns specified PoIs or Places around a given coordinate.\r\n\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Nearby-Countries API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&radius=400000&tag=countries",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						"nearby.php"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}",
+							"description": "Authentication key"
+						},
+						{
+							"key": "lat",
+							"value": "40.7484284",
+							"description": "Latitude of the location to generate the POI list for."
+						},
+						{
+							"key": "lon",
+							"value": "-73.9856546",
+							"description": "Longitude of the location to generate the POI list for."
+						},
+						{
+							"key": "radius",
+							"value": "400000",
+							"description": "Radius (in meters) from the given latitude and longitude. Limited to 5,000,000 meters (5000 KM / 3106 miles)"
+						},
+						{
+							"key": "tag",
+							"value": "countries",
+							"description": "(optional) defaults to country. [countries]"
+						}
+					]
+				},
+				"description": "The Nearby Countries API returns countries whose geographic borders lie within a given radius."
+			},
+			"response": []
+		},
+		{
+			"name": "Directions API - Directions",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						":service",
+						":profile",
+						":coordinates"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}"
+						},
+						{
+							"key": "bearings",
+							"value": "",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"disabled": true
+						},
+						{
+							"key": "radiuses",
+							"value": "",
+							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
+						},
+						{
+							"key": "generate_hints",
+							"value": "false",
+							"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+						},
+						{
+							"key": "approaches",
+							"value": "",
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+							"disabled": true
+						},
+						{
+							"key": "exclude",
+							"value": "",
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+							"disabled": true
+						},
+						{
+							"key": "alternatives",
+							"value": "",
+							"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
+							"disabled": true
+						},
+						{
+							"key": "step",
+							"value": "",
+							"description": "Returned route steps for each route leg [ true, false (default) ]",
+							"disabled": true
+						},
+						{
+							"key": "annotations",
+							"value": "",
+							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+							"disabled": true
+						},
+						{
+							"key": "geometries",
+							"value": "",
+							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
+							"disabled": true
+						},
+						{
+							"key": "overview",
+							"value": "",
+							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
+							"disabled": true
+						},
+						{
+							"key": "continue_straight",
+							"value": "",
+							"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "service",
+							"value": "directions",
+							"description": "One of the following values: directions, matching, matrix, nearest"
+						},
+						{
+							"key": "profile",
+							"value": "driving",
+							"description": "Mode of transportation. Only driving is supported at the moment."
+						},
+						{
+							"key": "coordinates",
+							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219",
+							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+						}
+					]
+				},
+				"description": "Finds the fastest route between coordinates in the supplied order."
+			},
+			"response": []
+		},
+		{
+			"name": "Directions API - Matching",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						":service",
+						":profile",
+						":coordinates"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}"
+						},
+						{
+							"key": "bearings",
+							"value": "",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"disabled": true
+						},
+						{
+							"key": "radiuses",
+							"value": "",
+							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
+						},
+						{
+							"key": "generate_hints",
+							"value": "false",
+							"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+						},
+						{
+							"key": "approaches",
+							"value": "",
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+							"disabled": true
+						},
+						{
+							"key": "exclude",
+							"value": "",
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+							"disabled": true
+						},
+						{
+							"key": "step",
+							"value": "",
+							"description": "Returned route steps for each route leg [ true, false (default) ]",
+							"disabled": true
+						},
+						{
+							"key": "geometries",
+							"value": "",
+							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
+							"disabled": true
+						},
+						{
+							"key": "annotations",
+							"value": "",
+							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+							"disabled": true
+						},
+						{
+							"key": "overview",
+							"value": "",
+							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
+							"disabled": true
+						},
+						{
+							"key": "timestamps",
+							"value": "",
+							"description": "Timestamps for the input locations in seconds since UNIX epoch. Timestamps need to be monotonically increasing.\n[ {timestamp};{timestamp}[;{timestamp} ...] \ninteger seconds since UNIX epoch",
+							"disabled": true
+						},
+						{
+							"key": "radiuses",
+							"value": "",
+							"description": "Standard deviation of GPS precision used for map matching. If applicable use GPS accuracy.\n[ {radius};{radius}[;{radius} ...]\ndouble >= 0 (default 5m)",
+							"disabled": true
+						},
+						{
+							"key": "gaps",
+							"value": "",
+							"description": "Allows the input track splitting based on huge timestamp gaps between points.\n[ split (default), ignore ]",
+							"disabled": true
+						},
+						{
+							"key": "tidy",
+							"value": "",
+							"description": "Allows the input track modification to obtain better matching quality for noisy tracks.\n[ true, false (default) ]",
+							"disabled": true
+						},
+						{
+							"key": "waypoints",
+							"value": "",
+							"description": "Treats input coordinates indicated by given indices as waypoints in returned Match object. Default is to treat all input coordinates as waypoints.\n[ {index};{index};{index}... ]",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "service",
+							"value": "matching",
+							"description": "One of the following values: directions, matching, matrix, nearest"
+						},
+						{
+							"key": "profile",
+							"value": "driving",
+							"description": "Mode of transportation. Only driving is supported at the moment."
+						},
+						{
+							"key": "coordinates",
+							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219",
+							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+						}
+					]
+				},
+				"description": "Matching API matches or snaps given GPS points to the road network in the most plausible way. Please note the request might result multiple sub-traces. Large jumps in the timestamps (> 60s) or improbable transitions lead to trace splits if a complete matching could not be found. The algorithm might not be able to match all points. Outliers are removed if they can not be matched successfully."
+			},
+			"response": []
+		},
+		{
+			"name": "Directions API - Matrix",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						":service",
+						":profile",
+						":coordinates"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}"
+						},
+						{
+							"key": "bearings",
+							"value": "",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"disabled": true
+						},
+						{
+							"key": "radiuses",
+							"value": "",
+							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
+						},
+						{
+							"key": "generate_hints",
+							"value": "false",
+							"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+						},
+						{
+							"key": "approaches",
+							"value": "",
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+							"disabled": true
+						},
+						{
+							"key": "exclude",
+							"value": "",
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+							"disabled": true
+						},
+						{
+							"key": "sources",
+							"value": "",
+							"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations",
+							"disabled": true
+						},
+						{
+							"key": "destinations",
+							"value": "",
+							"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]",
+							"disabled": true
+						},
+						{
+							"key": "annotations",
+							"value": "",
+							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration ]",
+							"disabled": true
+						},
+						{
+							"key": "fallback_speed",
+							"value": "",
+							"description": "If no route found between a source/destination pair, calculate the as-the-crow-flies distance, then use this speed to estimate duration.\ndouble > 0",
+							"disabled": true
+						},
+						{
+							"key": "fallback_coordinate",
+							"value": "",
+							"description": "When using a fallback_speed, use the user-supplied coordinate (input), or the snapped location (snapped) for calculating distances.\n[ input (default), or snapped ]",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "service",
+							"value": "matrix",
+							"description": "One of the following values: directions, matching, matrix, nearest"
+						},
+						{
+							"key": "profile",
+							"value": "driving",
+							"description": "Mode of transportation. Only driving is supported at the moment."
+						},
+						{
+							"key": "coordinates",
+							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219",
+							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+						}
+					]
+				},
+				"description": "Computes duration of the fastest route between all pairs of supplied coordinates. Returns the durations or distances or both between the coordinate pairs. Note that the distances are not the shortest distance between two coordinates, but rather the distances of the fastest routes."
+			},
+			"response": []
+		},
+		{
+			"name": "Directions API - Nearest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"host": [
+						"{{LocationIQ_Endpoint_URL}}"
+					],
+					"path": [
+						"v1",
+						":service",
+						":profile",
+						":coordinates"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Your_API_Key}}"
+						},
+						{
+							"key": "bearings",
+							"value": "",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"disabled": true
+						},
+						{
+							"key": "radiuses",
+							"value": "",
+							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
+						},
+						{
+							"key": "generate_hints",
+							"value": "false",
+							"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+						},
+						{
+							"key": "approaches",
+							"value": "",
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+							"disabled": true
+						},
+						{
+							"key": "exclude",
+							"value": "",
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+							"disabled": true
+						},
+						{
+							"key": "number",
+							"value": "",
+							"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "service",
+							"value": "nearest",
+							"description": "One of the following values: directions, matching, matrix, nearest"
+						},
+						{
+							"key": "profile",
+							"value": "driving",
+							"description": "Mode of transportation. Only driving is supported at the moment."
+						},
+						{
+							"key": "coordinates",
+							"value": "13.388860,52.517037",
+							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+						}
+					]
+				},
+				"description": "Snaps a coordinate to the street network and returns the nearest n matches.\nWhere coordinates only supports a single {longitude},{latitude} entry."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9d153fc3-3ec1-4bb8-8ceb-883d80e7546d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d50e9a68-ed13-4c47-95e5-8520d54df388",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": []
+}

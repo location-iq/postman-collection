@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&addressdetails=1",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&bounded=1&addressdetails=1&limit=10&accept-language=en&countrycodes=us&namedetails=1&dedupe=1&extratags=0&normalizecity=1&statecode=0&matchquality=1",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -39,14 +39,12 @@
 						{
 							"key": "viewbox",
 							"value": "-132.84908,47.69382,-70.44674,30.82531",
-							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
-							"disabled": true
+							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option."
 						},
 						{
 							"key": "bounded",
 							"value": "1",
-							"description": "Restrict the results to only items contained with the viewbox",
-							"disabled": true
+							"description": "Restrict the results to only items contained with the viewbox"
 						},
 						{
 							"key": "addressdetails",
@@ -56,30 +54,31 @@
 						{
 							"key": "limit",
 							"value": "10",
-							"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]",
-							"disabled": true
+							"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]"
+						},
+						{
+							"key": "accept-language",
+							"value": "en",
+							"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>"
 						},
 						{
 							"key": "countrycodes",
 							"value": "us",
-							"description": "Limit search to a list of countries. ",
-							"disabled": true
+							"description": "Limit search to a list of countries. "
 						},
 						{
 							"key": "namedetails",
 							"value": "1",
-							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
-							"disabled": true
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand."
 						},
 						{
 							"key": "dedupe",
 							"value": "1",
-							"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
-							"disabled": true
+							"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested."
 						},
 						{
 							"key": "json_callback",
-							"value": "",
+							"value": "1",
 							"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
 							"disabled": true
 						},
@@ -116,8 +115,7 @@
 						{
 							"key": "extratags",
 							"value": "0",
-							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
-							"disabled": true
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours."
 						},
 						{
 							"key": "exclude_place_ids",
@@ -127,14 +125,23 @@
 						},
 						{
 							"key": "normalizecity",
-							"value": "",
-							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
-							"disabled": true
+							"value": "1",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
 						},
 						{
 							"key": "statecode",
+							"value": "0",
+							"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+						},
+						{
+							"key": "matchquality",
 							"value": "1",
-							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+							"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+						},
+						{
+							"key": "postaladdress",
+							"value": "1",
+							"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
 							"disabled": true
 						}
 					]
@@ -149,7 +156,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json&addressdetails=1",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json&addressdetails=1&statecode=0&normalizecity=1&matchquality=0&postaladdress=0",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -222,6 +229,12 @@
 							"disabled": true
 						},
 						{
+							"key": "accept-language",
+							"value": "en",
+							"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>",
+							"disabled": true
+						},
+						{
 							"key": "countrycodes",
 							"value": "us",
 							"description": "Limit search to a list of countries. ",
@@ -288,16 +301,24 @@
 							"disabled": true
 						},
 						{
-							"key": "normalizecity",
-							"value": "",
-							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
-							"disabled": true
-						},
-						{
 							"key": "statecode",
 							"value": "0",
-							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
-							"disabled": true
+							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0"
+						},
+						{
+							"key": "normalizecity",
+							"value": "1",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+						},
+						{
+							"key": "matchquality",
+							"value": "0",
+							"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+						},
+						{
+							"key": "postaladdress",
+							"value": "0",
+							"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]"
 						}
 					]
 				},
@@ -311,7 +332,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json&addressdetails=1",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json&addressdetails=1&statecode=0&normalizecity=1&matchquality=0&postaladdress=0",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -356,6 +377,12 @@
 							"key": "addressdetails",
 							"value": "1",
 							"description": "Include a breakdown of the address into elements. Defaults to 0"
+						},
+						{
+							"key": "accept-language",
+							"value": "en",
+							"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>",
+							"disabled": true
 						},
 						{
 							"key": "limit",
@@ -424,16 +451,24 @@
 							"disabled": true
 						},
 						{
-							"key": "normalizecity",
-							"value": "",
-							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
-							"disabled": true
-						},
-						{
 							"key": "statecode",
 							"value": "0",
-							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
-							"disabled": true
+							"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0"
+						},
+						{
+							"key": "normalizecity",
+							"value": "1",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+						},
+						{
+							"key": "matchquality",
+							"value": "0",
+							"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+						},
+						{
+							"key": "postaladdress",
+							"value": "0",
+							"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]"
 						}
 					]
 				},
@@ -447,7 +482,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json&addressdetails=1&namedetails=0&extratags=0&normalizecity=1&statecode=0&showdistance=1",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -485,14 +520,12 @@
 						{
 							"key": "addressdetails",
 							"value": "1",
-							"description": "Include a breakdown of the address into elements. Defaults to 1.",
-							"disabled": true
+							"description": "Include a breakdown of the address into elements. Defaults to 1."
 						},
 						{
 							"key": "namedetails",
 							"value": "0",
-							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
-							"disabled": true
+							"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand."
 						},
 						{
 							"key": "accept_language",
@@ -502,13 +535,13 @@
 						},
 						{
 							"key": "osm_type",
-							"value": "",
+							"value": "W",
 							"description": "A specific osm type, node / way / relation to search an address for [ N, W , R ], only applicable when neither (lat lon) is present. That is use in combination osm_id and osm_type or lat and lon to get result",
 							"disabled": true
 						},
 						{
 							"key": "osm_id",
-							"value": "",
+							"value": "34633869",
 							"description": "A specific osm node / way / relation to return an address for",
 							"disabled": true
 						},
@@ -520,7 +553,7 @@
 						},
 						{
 							"key": "polygon_geojson",
-							"value": "",
+							"value": "1",
 							"description": "Output geometry of results in geojson format.",
 							"disabled": true
 						},
@@ -545,7 +578,27 @@
 						{
 							"key": "extratags",
 							"value": "0",
-							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours."
+						},
+						{
+							"key": "normalizecity",
+							"value": "1",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+						},
+						{
+							"key": "statecode",
+							"value": "0",
+							"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+						},
+						{
+							"key": "showdistance",
+							"value": "1",
+							"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]"
+						},
+						{
+							"key": "postaladdress",
+							"value": "0",
+							"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
 							"disabled": true
 						}
 					]
@@ -560,7 +613,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json&normalizecity=1&statecode=0&showdistance=0&postaladdress=0",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -648,6 +701,26 @@
 							"value": "0",
 							"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
 							"disabled": true
+						},
+						{
+							"key": "normalizecity",
+							"value": "1",
+							"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+						},
+						{
+							"key": "statecode",
+							"value": "0",
+							"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+						},
+						{
+							"key": "showdistance",
+							"value": "0",
+							"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]"
+						},
+						{
+							"key": "postaladdress",
+							"value": "0",
+							"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]"
 						}
 					]
 				},
@@ -1006,7 +1079,7 @@
 						},
 						{
 							"key": "bearings",
-							"value": "",
+							"value": "0,6",
 							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
 							"disabled": true
 						},
@@ -1145,13 +1218,13 @@
 						},
 						{
 							"key": "bearings",
-							"value": "",
+							"value": "0,5",
 							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
 							"disabled": true
 						},
 						{
 							"key": "radiuses",
-							"value": "",
+							"value": "50.00",
 							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
 							"disabled": true
 						},
@@ -1162,43 +1235,43 @@
 						},
 						{
 							"key": "approaches",
-							"value": "",
+							"value": "curb",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},
 						{
 							"key": "exclude",
-							"value": "",
+							"value": "toll",
 							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
 							"disabled": true
 						},
 						{
 							"key": "sources",
-							"value": "",
+							"value": "2",
 							"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations",
 							"disabled": true
 						},
 						{
 							"key": "destinations",
-							"value": "",
+							"value": "3",
 							"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]",
 							"disabled": true
 						},
 						{
 							"key": "annotations",
-							"value": "",
+							"value": "true",
 							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration ]",
 							"disabled": true
 						},
 						{
 							"key": "fallback_speed",
-							"value": "",
+							"value": "25.65",
 							"description": "If no route found between a source/destination pair, calculate the as-the-crow-flies distance, then use this speed to estimate duration.\ndouble > 0",
 							"disabled": true
 						},
 						{
 							"key": "fallback_coordinate",
-							"value": "",
+							"value": "snapped",
 							"description": "When using a fallback_speed, use the user-supplied coordinate (input), or the snapped location (snapped) for calculating distances.\n[ input (default), or snapped ]",
 							"disabled": true
 						}
@@ -1206,18 +1279,15 @@
 					"variable": [
 						{
 							"key": "service",
-							"value": "matrix",
-							"description": "One of the following values: directions, matching, matrix, nearest"
+							"value": "matrix"
 						},
 						{
 							"key": "profile",
-							"value": "driving",
-							"description": "Mode of transportation. Only driving is supported at the moment."
+							"value": "driving"
 						},
 						{
 							"key": "coordinates",
-							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219",
-							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219"
 						}
 					]
 				},
@@ -1243,7 +1313,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&bearings=0,6&radiuses=50&generate_hints=false&approaches=curb&exclude=toll&number=3",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1260,15 +1330,13 @@
 						},
 						{
 							"key": "bearings",
-							"value": "",
-							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-							"disabled": true
+							"value": "0,6",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180"
 						},
 						{
 							"key": "radiuses",
-							"value": "",
-							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-							"disabled": true
+							"value": "50",
+							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
 						},
 						{
 							"key": "generate_hints",
@@ -1277,21 +1345,18 @@
 						},
 						{
 							"key": "approaches",
-							"value": "",
-							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-							"disabled": true
+							"value": "curb",
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)"
 						},
 						{
 							"key": "exclude",
-							"value": "",
-							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-							"disabled": true
+							"value": "toll",
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none."
 						},
 						{
 							"key": "number",
-							"value": "",
-							"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]",
-							"disabled": true
+							"value": "3",
+							"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]"
 						}
 					],
 					"variable": [

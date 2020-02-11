@@ -941,7 +941,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&bearings=10,20;40,30;30,9&radiuses=500;200;300&generate_hints=false&exclude=toll&alternatives=0&annotations=false&geometries=polyline&overview=simplified&continue_straight=default",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -958,15 +958,13 @@
 						},
 						{
 							"key": "bearings",
-							"value": "",
-							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-							"disabled": true
+							"value": "10,20;40,30;30,9",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nexample :- For coordinates [ 13.388860,52.517037; 13.397634,52.529407; 13.428555,52.523219 ] an acceptable bearing could be [ 10,20;40,30;30,9 ]\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180"
 						},
 						{
 							"key": "radiuses",
-							"value": "",
-							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-							"disabled": true
+							"value": "500;200;300",
+							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
 						},
 						{
 							"key": "generate_hints",
@@ -975,51 +973,45 @@
 						},
 						{
 							"key": "approaches",
-							"value": "",
+							"value": "curb",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},
 						{
 							"key": "exclude",
-							"value": "",
-							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-							"disabled": true
+							"value": "toll",
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none."
 						},
 						{
 							"key": "alternatives",
-							"value": "",
-							"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
-							"disabled": true
+							"value": "0",
+							"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]"
 						},
 						{
 							"key": "step",
-							"value": "",
+							"value": "true",
 							"description": "Returned route steps for each route leg [ true, false (default) ]",
 							"disabled": true
 						},
 						{
 							"key": "annotations",
-							"value": "",
-							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
-							"disabled": true
+							"value": "false",
+							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]"
 						},
 						{
 							"key": "geometries",
-							"value": "",
-							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
-							"disabled": true
+							"value": "polyline",
+							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]"
 						},
 						{
 							"key": "overview",
-							"value": "",
-							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
-							"disabled": true
+							"value": "simplified",
+							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]"
 						},
 						{
 							"key": "continue_straight",
-							"value": "",
-							"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
-							"disabled": true
+							"value": "default",
+							"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]"
 						}
 					],
 					"variable": [
@@ -1079,14 +1071,14 @@
 						},
 						{
 							"key": "bearings",
-							"value": "0,6",
-							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"value": "0,4;10,20;30,50",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
 							"disabled": true
 						},
 						{
 							"key": "radiuses",
 							"value": "",
-							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
 							"disabled": true
 						},
 						{
@@ -1096,7 +1088,7 @@
 						},
 						{
 							"key": "approaches",
-							"value": "",
+							"value": "curb",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},
@@ -1201,7 +1193,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&radiuses=500;200;300&generate_hints=false",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1218,15 +1210,14 @@
 						},
 						{
 							"key": "bearings",
-							"value": "0,5",
-							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"value": "10,20;40,30;30,9",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nexample :- For coordinates [ 13.388860,52.517037; 13.397634,52.529407; 13.428555,52.523219 ] an acceptable bearing could be [ 10,20;40,30;30,9 ]\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
 							"disabled": true
 						},
 						{
 							"key": "radiuses",
-							"value": "50.00",
-							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-							"disabled": true
+							"value": "500;200;300",
+							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
 						},
 						{
 							"key": "generate_hints",
@@ -1235,7 +1226,7 @@
 						},
 						{
 							"key": "approaches",
-							"value": "curb",
+							"value": "",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},
@@ -1259,7 +1250,7 @@
 						},
 						{
 							"key": "annotations",
-							"value": "true",
+							"value": "distance",
 							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration ]",
 							"disabled": true
 						},
@@ -1313,7 +1304,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&bearings=0,6&radiuses=50&generate_hints=false&approaches=curb&exclude=toll&number=3",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&approaches=curb&exclude=toll&number=3",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1330,13 +1321,15 @@
 						},
 						{
 							"key": "bearings",
-							"value": "0,6",
-							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180"
+							"value": "10,20",
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nexample :- For coordinates [ 13.388860,52.517037 ] an acceptable bearing could be [ 10,20 ]\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"disabled": true
 						},
 						{
 							"key": "radiuses",
-							"value": "50",
-							"description": "Limits the search to given radius in meters\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
+							"value": "10",
+							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
 						},
 						{
 							"key": "generate_hints",

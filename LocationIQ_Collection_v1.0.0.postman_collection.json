@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&bounded=1&addressdetails=1&limit=10&accept-language=en&countrycodes=us&namedetails=1&dedupe=1&extratags=0&normalizecity=1&statecode=0&matchquality=1",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&addressdetails=1&limit=10&accept-language=en&countrycodes=us&namedetails=1&dedupe=1&extratags=0&normalizecity=1&statecode=0&matchquality=1",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -43,8 +43,9 @@
 						},
 						{
 							"key": "bounded",
-							"value": "1",
-							"description": "Restrict the results to only items contained with the viewbox"
+							"value": "None",
+							"description": "Restrict the results to only items contained with the viewbox",
+							"disabled": true
 						},
 						{
 							"key": "addressdetails",
@@ -332,7 +333,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json&addressdetails=1&statecode=0&normalizecity=1&matchquality=0&postaladdress=0",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&addressdetails=1&statecode=0&normalizecity=1&matchquality=0&postaladdress=0",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -364,12 +365,11 @@
 						{
 							"key": "viewbox",
 							"value": "-132.84908,47.69382,-70.44674,30.82531",
-							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
-							"disabled": true
+							"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option."
 						},
 						{
 							"key": "bounded",
-							"value": "1",
+							"value": "None",
 							"description": "Restrict the results to only items contained with the viewbox",
 							"disabled": true
 						},
@@ -410,7 +410,7 @@
 						},
 						{
 							"key": "polygon",
-							"value": "",
+							"value": "1",
 							"description": "Output polygon outlines for items found",
 							"disabled": true
 						},
@@ -941,7 +941,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&bearings=10,20;40,30;30,9&radiuses=500;200;300&generate_hints=false&exclude=toll&alternatives=0&annotations=false&geometries=polyline&overview=simplified&continue_straight=default",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&exclude=toll&alternatives=0&annotations=false&geometries=polyline&overview=simplified&continue_straight=default",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -959,12 +959,14 @@
 						{
 							"key": "bearings",
 							"value": "10,20;40,30;30,9",
-							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nexample :- For coordinates [ 13.388860,52.517037; 13.397634,52.529407; 13.428555,52.523219 ] an acceptable bearing could be [ 10,20;40,30;30,9 ]\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180"
+							"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nexample :- For coordinates [ 13.388860,52.517037; 13.397634,52.529407; 13.428555,52.523219 ] an acceptable bearing could be [ 10,20;40,30;30,9 ]\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+							"disabled": true
 						},
 						{
 							"key": "radiuses",
 							"value": "500;200;300",
-							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
+							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
 						},
 						{
 							"key": "generate_hints",
@@ -1027,7 +1029,7 @@
 						},
 						{
 							"key": "coordinates",
-							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219",
+							"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
 							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
 						}
 					]
@@ -1088,7 +1090,7 @@
 						},
 						{
 							"key": "approaches",
-							"value": "curb",
+							"value": "None",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},
@@ -1166,7 +1168,7 @@
 						},
 						{
 							"key": "coordinates",
-							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219",
+							"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
 							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
 						}
 					]
@@ -1193,7 +1195,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&radiuses=500;200;300&generate_hints=false",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&sources=0&destinations=2",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1217,7 +1219,8 @@
 						{
 							"key": "radiuses",
 							"value": "500;200;300",
-							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
+							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+							"disabled": true
 						},
 						{
 							"key": "generate_hints",
@@ -1238,15 +1241,13 @@
 						},
 						{
 							"key": "sources",
-							"value": "2",
-							"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations",
-							"disabled": true
+							"value": "0",
+							"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations"
 						},
 						{
 							"key": "destinations",
-							"value": "3",
-							"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]",
-							"disabled": true
+							"value": "2",
+							"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]"
 						},
 						{
 							"key": "annotations",
@@ -1278,7 +1279,7 @@
 						},
 						{
 							"key": "coordinates",
-							"value": "13.388860,52.517037;13.397634,52.529407;13.428555,52.523219"
+							"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550"
 						}
 					]
 				},
@@ -1365,7 +1366,7 @@
 						},
 						{
 							"key": "coordinates",
-							"value": "13.388860,52.517037",
+							"value": "-0.16102,51.523854",
 							"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
 						}
 					]

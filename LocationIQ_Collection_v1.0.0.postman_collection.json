@@ -941,7 +941,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&approaches=curb;curb;curb&exclude=toll&alternatives=0&steps=true&annotations=false&geometries=polyline&overview=simplified&continue_straight=default",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -976,42 +976,50 @@
 						{
 							"key": "approaches",
 							"value": "curb;curb;curb",
-							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)"
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+							"disabled": true
 						},
 						{
 							"key": "exclude",
 							"value": "toll",
-							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none."
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+							"disabled": true
 						},
 						{
 							"key": "alternatives",
 							"value": "0",
-							"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]"
+							"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
+							"disabled": true
 						},
 						{
 							"key": "steps",
 							"value": "true",
-							"description": "Returned route steps for each route leg [ true, false (default) ]"
+							"description": "Returned route steps for each route leg [ true, false (default) ]",
+							"disabled": true
 						},
 						{
 							"key": "annotations",
-							"value": "false",
-							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]"
+							"value": "true",
+							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+							"disabled": true
 						},
 						{
 							"key": "geometries",
 							"value": "polyline",
-							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]"
+							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
+							"disabled": true
 						},
 						{
 							"key": "overview",
 							"value": "simplified",
-							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]"
+							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
+							"disabled": true
 						},
 						{
 							"key": "continue_straight",
 							"value": "default",
-							"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]"
+							"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
+							"disabled": true
 						}
 					],
 					"variable": [
@@ -1054,7 +1062,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&steps=true",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1094,60 +1102,55 @@
 						},
 						{
 							"key": "exclude",
-							"value": "",
+							"value": "toll",
 							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
 							"disabled": true
 						},
 						{
 							"key": "steps",
 							"value": "true",
-							"description": "Returned route steps for each route leg [ true, false (default) ]"
+							"description": "Returned route steps for each route leg [ true, false (default) ]",
+							"disabled": true
 						},
 						{
 							"key": "geometries",
-							"value": "",
+							"value": "polyline",
 							"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
 							"disabled": true
 						},
 						{
 							"key": "annotations",
-							"value": "",
+							"value": "false",
 							"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
 							"disabled": true
 						},
 						{
 							"key": "overview",
-							"value": "",
+							"value": "simplified",
 							"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
 							"disabled": true
 						},
 						{
 							"key": "timestamps",
-							"value": "",
+							"value": "200;300;900",
 							"description": "Timestamps for the input locations in seconds since UNIX epoch. Timestamps need to be monotonically increasing.\n[ {timestamp};{timestamp}[;{timestamp} ...] \ninteger seconds since UNIX epoch",
 							"disabled": true
 						},
 						{
-							"key": "radiuses",
-							"value": "",
-							"description": "Standard deviation of GPS precision used for map matching. If applicable use GPS accuracy.\n[ {radius};{radius}[;{radius} ...]\ndouble >= 0 (default 5m)",
-							"disabled": true
-						},
-						{
 							"key": "gaps",
-							"value": "",
+							"value": "split",
 							"description": "Allows the input track splitting based on huge timestamp gaps between points.\n[ split (default), ignore ]",
 							"disabled": true
 						},
 						{
 							"key": "tidy",
-							"value": "",
+							"value": "false",
 							"description": "Allows the input track modification to obtain better matching quality for noisy tracks.\n[ true, false (default) ]",
 							"disabled": true
 						},
 						{
 							"key": "waypoints",
-							"value": "",
+							"value": "0;1;2",
 							"description": "Treats input coordinates indicated by given indices as waypoints in returned Match object. Default is to treat all input coordinates as waypoints.\n[ {index};{index};{index}... ]",
 							"disabled": true
 						}
@@ -1192,7 +1195,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&sources=0&destinations=2",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1239,12 +1242,14 @@
 						{
 							"key": "sources",
 							"value": "0",
-							"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations"
+							"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations",
+							"disabled": true
 						},
 						{
 							"key": "destinations",
 							"value": "2",
-							"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]"
+							"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]",
+							"disabled": true
 						},
 						{
 							"key": "annotations",
@@ -1260,7 +1265,7 @@
 						},
 						{
 							"key": "fallback_coordinate",
-							"value": "snapped",
+							"value": "input",
 							"description": "When using a fallback_speed, use the user-supplied coordinate (input), or the snapped location (snapped) for calculating distances.\n[ input (default), or snapped ]",
 							"disabled": true
 						}
@@ -1302,7 +1307,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&approaches=curb&exclude=toll&number=3",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1325,7 +1330,7 @@
 						},
 						{
 							"key": "radiuses",
-							"value": "10",
+							"value": "1000",
 							"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
 							"disabled": true
 						},
@@ -1337,17 +1342,20 @@
 						{
 							"key": "approaches",
 							"value": "curb",
-							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)"
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+							"disabled": true
 						},
 						{
 							"key": "exclude",
 							"value": "toll",
-							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none."
+							"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+							"disabled": true
 						},
 						{
 							"key": "number",
 							"value": "3",
-							"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]"
+							"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]",
+							"disabled": true
 						}
 					],
 					"variable": [

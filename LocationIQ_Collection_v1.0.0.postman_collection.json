@@ -941,7 +941,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&exclude=toll&alternatives=0&annotations=false&geometries=polyline&overview=simplified&continue_straight=default",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&approaches=curb;curb;curb&exclude=toll&alternatives=0&steps=true&annotations=false&geometries=polyline&overview=simplified&continue_straight=default",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -975,9 +975,8 @@
 						},
 						{
 							"key": "approaches",
-							"value": "curb",
-							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-							"disabled": true
+							"value": "curb;curb;curb",
+							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)"
 						},
 						{
 							"key": "exclude",
@@ -990,10 +989,9 @@
 							"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]"
 						},
 						{
-							"key": "step",
+							"key": "steps",
 							"value": "true",
-							"description": "Returned route steps for each route leg [ true, false (default) ]",
-							"disabled": true
+							"description": "Returned route steps for each route leg [ true, false (default) ]"
 						},
 						{
 							"key": "annotations",
@@ -1056,7 +1054,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false&steps=true",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1090,7 +1088,7 @@
 						},
 						{
 							"key": "approaches",
-							"value": "None",
+							"value": "curb;curb;curb",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},
@@ -1101,10 +1099,9 @@
 							"disabled": true
 						},
 						{
-							"key": "step",
-							"value": "",
-							"description": "Returned route steps for each route leg [ true, false (default) ]",
-							"disabled": true
+							"key": "steps",
+							"value": "true",
+							"description": "Returned route steps for each route leg [ true, false (default) ]"
 						},
 						{
 							"key": "geometries",
@@ -1229,7 +1226,7 @@
 						},
 						{
 							"key": "approaches",
-							"value": "",
+							"value": "curb;curb;curb",
 							"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
 							"disabled": true
 						},

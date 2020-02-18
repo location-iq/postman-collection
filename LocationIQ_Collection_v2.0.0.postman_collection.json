@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "2ee638c5-159f-4592-89f0-fa004aede1f9",
-		"name": "LocationIQ Collection v1.0.0",
+		"name": "LocationIQ Collection v2.0.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&addressdetails=1&limit=10&accept-language=en&namedetails=1&dedupe=1&extratags=0&normalizecity=1&statecode=0&matchquality=1",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -42,7 +42,8 @@
 								{
 									"key": "viewbox",
 									"value": "-132.84908,47.69382,-70.44674,30.82531",
-									"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option."
+									"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
+									"disabled": true
 								},
 								{
 									"key": "bounded",
@@ -53,17 +54,20 @@
 								{
 									"key": "addressdetails",
 									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 0"
+									"description": "Include a breakdown of the address into elements. Defaults to 0",
+									"disabled": true
 								},
 								{
 									"key": "limit",
 									"value": "10",
-									"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]"
+									"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]",
+									"disabled": true
 								},
 								{
 									"key": "accept-language",
 									"value": "en",
-									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>"
+									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>",
+									"disabled": true
 								},
 								{
 									"key": "countrycodes",
@@ -74,12 +78,14 @@
 								{
 									"key": "namedetails",
 									"value": "1",
-									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand."
+									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+									"disabled": true
 								},
 								{
 									"key": "dedupe",
 									"value": "1",
-									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested."
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+									"disabled": true
 								},
 								{
 									"key": "json_callback",
@@ -120,7 +126,8 @@
 								{
 									"key": "extratags",
 									"value": "0",
-									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours."
+									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+									"disabled": true
 								},
 								{
 									"key": "exclude_place_ids",
@@ -131,17 +138,20 @@
 								{
 									"key": "normalizecity",
 									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "statecode",
 									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "matchquality",
 									"value": "1",
-									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]",
+									"disabled": true
 								},
 								{
 									"key": "postaladdress",
@@ -161,7 +171,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&addressdetails=1&limit=10&accept-language=en&countrycodes=us&namedetails=1&dedupe=1&extratags=0&normalizecity=1&statecode=0&matchquality=1",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&countrycodes=us",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -188,7 +198,8 @@
 								{
 									"key": "viewbox",
 									"value": "-132.84908,47.69382,-70.44674,30.82531",
-									"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option."
+									"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
+									"disabled": true
 								},
 								{
 									"key": "bounded",
@@ -199,17 +210,20 @@
 								{
 									"key": "addressdetails",
 									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 0"
+									"description": "Include a breakdown of the address into elements. Defaults to 0",
+									"disabled": true
 								},
 								{
 									"key": "limit",
 									"value": "10",
-									"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]"
+									"description": "Limit the number of returned results. Default is 10. [ 1- 50 ]",
+									"disabled": true
 								},
 								{
 									"key": "accept-language",
 									"value": "en",
-									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>"
+									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. Read more. <string>",
+									"disabled": true
 								},
 								{
 									"key": "countrycodes",
@@ -219,12 +233,14 @@
 								{
 									"key": "namedetails",
 									"value": "1",
-									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand."
+									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+									"disabled": true
 								},
 								{
 									"key": "dedupe",
 									"value": "1",
-									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested."
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+									"disabled": true
 								},
 								{
 									"key": "json_callback",
@@ -265,7 +281,8 @@
 								{
 									"key": "extratags",
 									"value": "0",
-									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours."
+									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+									"disabled": true
 								},
 								{
 									"key": "exclude_place_ids",
@@ -276,17 +293,20 @@
 								{
 									"key": "normalizecity",
 									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "statecode",
 									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "matchquality",
 									"value": "1",
-									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]",
+									"disabled": true
 								},
 								{
 									"key": "postaladdress",
@@ -306,7 +326,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json&addressdetails=1&statecode=0&normalizecity=1&matchquality=0&postaladdress=0",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -370,7 +390,8 @@
 								{
 									"key": "addressdetails",
 									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 0"
+									"description": "Include a breakdown of the address into elements. Defaults to 0",
+									"disabled": true
 								},
 								{
 									"key": "limit",
@@ -453,22 +474,26 @@
 								{
 									"key": "statecode",
 									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0"
+									"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+									"disabled": true
 								},
 								{
 									"key": "normalizecity",
 									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "matchquality",
 									"value": "0",
-									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]",
+									"disabled": true
 								},
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]"
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"disabled": true
 								}
 							]
 						},
@@ -482,7 +507,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json&viewbox=-132.84908,47.69382,-70.44674,30.82531&addressdetails=1&statecode=0&normalizecity=1&matchquality=0&postaladdress=0",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -514,7 +539,8 @@
 								{
 									"key": "viewbox",
 									"value": "-132.84908,47.69382,-70.44674,30.82531",
-									"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option."
+									"description": "The preferred area to find search results. Any two corner points of the box - max_lon,max_lat,min_lon,min_lat or min_lon,min_lat,max_lon,max_lat - are accepted in any order as long as they span a real box. To restrict results to those within the viewbox, use along with the bounded option.",
+									"disabled": true
 								},
 								{
 									"key": "bounded",
@@ -525,7 +551,8 @@
 								{
 									"key": "addressdetails",
 									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 0"
+									"description": "Include a breakdown of the address into elements. Defaults to 0",
+									"disabled": true
 								},
 								{
 									"key": "accept-language",
@@ -602,28 +629,55 @@
 								{
 									"key": "statecode",
 									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0"
+									"description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+									"disabled": true
 								},
 								{
 									"key": "normalizecity",
 									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "matchquality",
 									"value": "0",
-									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]"
+									"description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]",
+									"disabled": true
 								},
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]"
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"disabled": true
 								}
 							]
 						},
 						"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding.\nIt takes postalcode & countrycode as input."
 					},
 					"response": []
+				}
+			],
+			"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "424c4334-e9e9-44d2-b1ee-fff9e431ef1b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d56dfa61-c966-41a3-a596-b69a71780c54",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -637,7 +691,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json&addressdetails=1&namedetails=0&extratags=0&normalizecity=1&statecode=0&showdistance=1",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -675,12 +729,14 @@
 								{
 									"key": "addressdetails",
 									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 1."
+									"description": "Include a breakdown of the address into elements. Defaults to 1.",
+									"disabled": true
 								},
 								{
 									"key": "namedetails",
 									"value": "0",
-									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand."
+									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+									"disabled": true
 								},
 								{
 									"key": "accept_language",
@@ -733,22 +789,26 @@
 								{
 									"key": "extratags",
 									"value": "0",
-									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours."
+									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+									"disabled": true
 								},
 								{
 									"key": "normalizecity",
 									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "statecode",
 									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "showdistance",
 									"value": "1",
-									"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]"
+									"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]",
+									"disabled": true
 								},
 								{
 									"key": "postaladdress",
@@ -768,7 +828,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json&normalizecity=1&statecode=0&showdistance=0&postaladdress=0",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -860,28 +920,55 @@
 								{
 									"key": "normalizecity",
 									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]"
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "statecode",
 									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]"
+									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
+									"disabled": true
 								},
 								{
 									"key": "showdistance",
 									"value": "0",
-									"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]"
+									"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]",
+									"disabled": true
 								},
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]"
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"disabled": true
 								}
 							]
 						},
 						"description": "Reverse geocoding with OSM ID & Type is the process of converting an object represented by OSM ID and Type ( node, way and relations [N,W,R] ) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
 					},
 					"response": []
+				}
+			],
+			"description": "Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3378cb19-1f0f-4398-8783-dd1385a774c2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d0159d9-f528-44f7-b053-967192d86be7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -928,7 +1015,7 @@
 								},
 								{
 									"key": "bounded",
-									"value": "",
+									"value": "1",
 									"description": "Restrict result to items contained within the bounds specified in the viewbox parameter [0] [1]",
 									"disabled": true
 								},
@@ -954,6 +1041,12 @@
 									"key": "accept-language",
 									"value": "en",
 									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
+									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "place",
+									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city,\nTo restrict the results to all of OSM class place: tag=place",
 									"disabled": true
 								}
 							]
@@ -1027,6 +1120,12 @@
 									"value": "en",
 									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
 									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "place",
+									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city,\nTo restrict the results to all of OSM class place: tag=place",
+									"disabled": true
 								}
 							]
 						},
@@ -1099,12 +1198,41 @@
 									"value": "en",
 									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
 									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "place",
+									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city,\nTo restrict the results to all of OSM class place: tag=place",
+									"disabled": true
 								}
 							]
 						},
 						"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
 					},
 					"response": []
+				}
+			],
+			"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ce3190c-3dda-4c1b-8cac-61d718d931f0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "155a21f4-523d-4c74-9295-797864136894",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1130,7 +1258,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -1160,7 +1288,8 @@
 								{
 									"key": "generate_hints",
 									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+									"disabled": true
 								},
 								{
 									"key": "approaches",
@@ -1251,7 +1380,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&radiuses=500;200;300&generate_hints=false",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&radiuses=500;200;300",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -1280,7 +1409,8 @@
 								{
 									"key": "generate_hints",
 									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+									"disabled": true
 								},
 								{
 									"key": "approaches",
@@ -1371,7 +1501,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -1401,7 +1531,8 @@
 								{
 									"key": "generate_hints",
 									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+									"disabled": true
 								},
 								{
 									"key": "approaches",
@@ -1504,7 +1635,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -1534,7 +1665,8 @@
 								{
 									"key": "generate_hints",
 									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+									"disabled": true
 								},
 								{
 									"key": "approaches",
@@ -1616,7 +1748,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&generate_hints=false",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -1646,7 +1778,8 @@
 								{
 									"key": "generate_hints",
 									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String"
+									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+									"disabled": true
 								},
 								{
 									"key": "approaches",
@@ -1723,7 +1856,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&radius=3000&tag=railway_station&limit=10",
+					"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=railway_station",
 					"host": [
 						"{{LocationIQ_Endpoint_URL}}"
 					],
@@ -1750,7 +1883,8 @@
 						{
 							"key": "radius",
 							"value": "3000",
-							"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters."
+							"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters.",
+							"disabled": true
 						},
 						{
 							"key": "tag",
@@ -1760,7 +1894,8 @@
 						{
 							"key": "limit",
 							"value": "10",
-							"description": "No of results to look for. Defaults to 10. Max value is 50. (Pagination is not supported yet)."
+							"description": "No of results to look for. Defaults to 10. Max value is 50. (Pagination is not supported yet).",
+							"disabled": true
 						}
 					]
 				},

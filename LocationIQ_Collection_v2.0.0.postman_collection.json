@@ -161,7 +161,7 @@
 								}
 							]
 						},
-						"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding\nIt takes free form query string to search, commas are optional but improves performance by reducing the complexity of the search."
+						"description": "It takes free form query string to search, commas are optional but improves performance by reducing the complexity of the search.\n\n> The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding"
 					},
 					"response": []
 				},
@@ -316,7 +316,7 @@
 								}
 							]
 						},
-						"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding\nIt takes free form query string to search, commas are optional but improves performance by reducing the complexity of the search."
+						"description": "It takes free form query string to search, commas are optional but improves performance by reducing the complexity of the search.\n\n> The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding"
 					},
 					"response": []
 				},
@@ -497,7 +497,7 @@
 								}
 							]
 						},
-						"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding.\nIt takes structured address as input."
+						"description": "It takes structured address as input.\n\n> The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding."
 					},
 					"response": []
 				},
@@ -652,7 +652,7 @@
 								}
 							]
 						},
-						"description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding.\nIt takes postalcode & countrycode as input."
+						"description": "It takes postalcode & countrycode as input.\n\n> The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding."
 					},
 					"response": []
 				}
@@ -686,7 +686,7 @@
 			"name": "Reverse Geocoding",
 			"item": [
 				{
-					"name": "Reverse Geocoding API",
+					"name": "Using Lat & Lon",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -818,12 +818,12 @@
 								}
 							]
 						},
-						"description": "Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
+						"description": "It takes latitude and longitude as input to reverse geocode.\n\n> Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
 					},
 					"response": []
 				},
 				{
-					"name": "Reverse Geocoding API OSM ID & Type",
+					"name": "Using OSM ID & Type",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -943,7 +943,7 @@
 								}
 							]
 						},
-						"description": "Reverse geocoding with OSM ID & Type is the process of converting an object represented by OSM ID and Type ( node, way and relations [N,W,R] ) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
+						"description": "It takes OSM ID & Type as input.\n\n> Reverse geocoding with OSM ID & Type is the process of converting an object represented by OSM ID and Type ( node, way and relations [N,W,R] ) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
 					},
 					"response": []
 				}
@@ -977,7 +977,7 @@
 			"name": "Autocomplete API",
 			"item": [
 				{
-					"name": "Autocomplete",
+					"name": "General usage",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1051,12 +1051,12 @@
 								}
 							]
 						},
-						"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
+						"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\n\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
 					},
 					"response": []
 				},
 				{
-					"name": "Autocomplete - Limit countries",
+					"name": "Limit by country code",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1129,12 +1129,12 @@
 								}
 							]
 						},
-						"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
+						"description": "Limit the place predictions to specific country.\r\n\r\n> The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\n> The Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
 					},
 					"response": []
 				},
 				{
-					"name": "Autocomplete - Viewbox",
+					"name": "Limit by viewbox",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1207,7 +1207,7 @@
 								}
 							]
 						},
-						"description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\nThe Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
+						"description": "Specify the preferred area to find search results.\r\n\r\n> The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.\r\n\r\n> The Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions."
 					},
 					"response": []
 				}
@@ -1238,716 +1238,894 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Directions API",
+			"name": "Directions Service",
 			"item": [
 				{
-					"name": "Directions service",
+					"name": "Directions API",
+					"item": [
+						{
+							"name": "General usage",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "10,20;40,30;30,9",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "500;200;300",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+											"disabled": true
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb;curb;curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "alternatives",
+											"value": "0",
+											"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
+											"disabled": true
+										},
+										{
+											"key": "steps",
+											"value": "true",
+											"description": "Returned route steps for each route leg [ true, false (default) ]",
+											"disabled": true
+										},
+										{
+											"key": "annotations",
+											"value": "true",
+											"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+											"disabled": true
+										},
+										{
+											"key": "geometries",
+											"value": "polyline",
+											"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
+											"disabled": true
+										},
+										{
+											"key": "overview",
+											"value": "simplified",
+											"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
+											"disabled": true
+										},
+										{
+											"key": "continue_straight",
+											"value": "default",
+											"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "service",
+											"value": "directions",
+											"description": "One of the following values: directions, matching, matrix, nearest"
+										},
+										{
+											"key": "profile",
+											"value": "driving",
+											"description": "Mode of transportation. Only driving is supported at the moment."
+										},
+										{
+											"key": "coordinates",
+											"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+										}
+									]
+								},
+								"description": "Finds the fastest route between coordinates in the supplied order."
+							},
+							"response": []
+						},
+						{
+							"name": "Limit by radius",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&radiuses=500;200;300",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "10,20;40,30;30,9",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "500;200;300",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb;curb;curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "alternatives",
+											"value": "0",
+											"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
+											"disabled": true
+										},
+										{
+											"key": "steps",
+											"value": "true",
+											"description": "Returned route steps for each route leg [ true, false (default) ]",
+											"disabled": true
+										},
+										{
+											"key": "annotations",
+											"value": "true",
+											"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+											"disabled": true
+										},
+										{
+											"key": "geometries",
+											"value": "polyline",
+											"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
+											"disabled": true
+										},
+										{
+											"key": "overview",
+											"value": "simplified",
+											"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
+											"disabled": true
+										},
+										{
+											"key": "continue_straight",
+											"value": "default",
+											"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"description": "One of the following values: directions, matching, matrix, nearest",
+											"key": "service",
+											"value": "directions"
+										},
+										{
+											"description": "Mode of transportation. Only driving is supported at the moment.",
+											"key": "profile",
+											"value": "driving"
+										},
+										{
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5",
+											"key": "coordinates",
+											"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550"
+										}
+									]
+								},
+								"description": "Limit the search route to an area calculated based on radius.\n\n> Finds the fastest route between coordinates in the supplied order."
+							},
+							"response": []
+						}
+					],
+					"description": "Finds the fastest route between coordinates in the supplied order.",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+								"id": "d93c0659-ad27-40a5-8db0-5569fb3b4b2f",
+								"type": "text/javascript",
 								"exec": [
 									""
-								],
-								"type": "text/javascript"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "18b86ec1-78c8-447a-8477-fa2049848f0f",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
 							}
 						}
 					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								":service",
-								":profile",
-								":coordinates"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}"
-								},
-								{
-									"key": "bearings",
-									"value": "10,20;40,30;30,9",
-									"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-									"disabled": true
-								},
-								{
-									"key": "radiuses",
-									"value": "500;200;300",
-									"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-									"disabled": true
-								},
-								{
-									"key": "generate_hints",
-									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
-									"disabled": true
-								},
-								{
-									"key": "approaches",
-									"value": "curb;curb;curb",
-									"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": "toll",
-									"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-									"disabled": true
-								},
-								{
-									"key": "alternatives",
-									"value": "0",
-									"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
-									"disabled": true
-								},
-								{
-									"key": "steps",
-									"value": "true",
-									"description": "Returned route steps for each route leg [ true, false (default) ]",
-									"disabled": true
-								},
-								{
-									"key": "annotations",
-									"value": "true",
-									"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
-									"disabled": true
-								},
-								{
-									"key": "geometries",
-									"value": "polyline",
-									"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
-									"disabled": true
-								},
-								{
-									"key": "overview",
-									"value": "simplified",
-									"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
-									"disabled": true
-								},
-								{
-									"key": "continue_straight",
-									"value": "default",
-									"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "service",
-									"value": "directions",
-									"description": "One of the following values: directions, matching, matrix, nearest"
-								},
-								{
-									"key": "profile",
-									"value": "driving",
-									"description": "Mode of transportation. Only driving is supported at the moment."
-								},
-								{
-									"key": "coordinates",
-									"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
-									"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
-								}
-							]
-						},
-						"description": "Finds the fastest route between coordinates in the supplied order."
-					},
-					"response": []
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Directions service - Limit radius",
+					"name": "Matching API",
+					"item": [
+						{
+							"name": "General usage",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "0,4;10,20;30,50",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+											"disabled": true
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb;curb;curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "steps",
+											"value": "true",
+											"description": "Returned route steps for each route leg [ true, false (default) ]",
+											"disabled": true
+										},
+										{
+											"key": "geometries",
+											"value": "polyline",
+											"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
+											"disabled": true
+										},
+										{
+											"key": "annotations",
+											"value": "false",
+											"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+											"disabled": true
+										},
+										{
+											"key": "overview",
+											"value": "simplified",
+											"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
+											"disabled": true
+										},
+										{
+											"key": "timestamps",
+											"value": "200;300;900",
+											"description": "Timestamps for the input locations in seconds since UNIX epoch. Timestamps need to be monotonically increasing.\n[ {timestamp};{timestamp}[;{timestamp} ...] \ninteger seconds since UNIX epoch",
+											"disabled": true
+										},
+										{
+											"key": "gaps",
+											"value": "split",
+											"description": "Allows the input track splitting based on huge timestamp gaps between points.\n[ split (default), ignore ]",
+											"disabled": true
+										},
+										{
+											"key": "tidy",
+											"value": "false",
+											"description": "Allows the input track modification to obtain better matching quality for noisy tracks.\n[ true, false (default) ]",
+											"disabled": true
+										},
+										{
+											"key": "waypoints",
+											"value": "0;1;2",
+											"description": "Treats input coordinates indicated by given indices as waypoints in returned Match object. Default is to treat all input coordinates as waypoints.\n[ {index};{index};{index}... ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "service",
+											"value": "matching",
+											"description": "One of the following values: directions, matching, matrix, nearest"
+										},
+										{
+											"key": "profile",
+											"value": "driving",
+											"description": "Mode of transportation. Only driving is supported at the moment."
+										},
+										{
+											"key": "coordinates",
+											"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+										}
+									]
+								},
+								"description": "Matching API matches or snaps given GPS points to the road network in the most plausible way. Please note the request might result multiple sub-traces. Large jumps in the timestamps (> 60s) or improbable transitions lead to trace splits if a complete matching could not be found. The algorithm might not be able to match all points. Outliers are removed if they can not be matched successfully."
+							},
+							"response": []
+						}
+					],
+					"description": "Matching API matches or snaps given GPS points to the road network in the most plausible way. Please note the request might result multiple sub-traces. Large jumps in the timestamps (> 60s) or improbable transitions lead to trace splits if a complete matching could not be found. The algorithm might not be able to match all points. Outliers are removed if they can not be matched successfully.",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+								"id": "62f07de7-b538-4a4b-9595-28f1eee1b891",
+								"type": "text/javascript",
 								"exec": [
 									""
-								],
-								"type": "text/javascript"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7555596-b1ff-4bf3-bead-5c15ff873115",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
 							}
 						}
 					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&radiuses=500;200;300",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								":service",
-								":profile",
-								":coordinates"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}"
-								},
-								{
-									"key": "bearings",
-									"value": "10,20;40,30;30,9",
-									"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-									"disabled": true
-								},
-								{
-									"key": "radiuses",
-									"value": "500;200;300",
-									"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)"
-								},
-								{
-									"key": "generate_hints",
-									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
-									"disabled": true
-								},
-								{
-									"key": "approaches",
-									"value": "curb;curb;curb",
-									"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": "toll",
-									"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-									"disabled": true
-								},
-								{
-									"key": "alternatives",
-									"value": "0",
-									"description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
-									"disabled": true
-								},
-								{
-									"key": "steps",
-									"value": "true",
-									"description": "Returned route steps for each route leg [ true, false (default) ]",
-									"disabled": true
-								},
-								{
-									"key": "annotations",
-									"value": "true",
-									"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
-									"disabled": true
-								},
-								{
-									"key": "geometries",
-									"value": "polyline",
-									"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
-									"disabled": true
-								},
-								{
-									"key": "overview",
-									"value": "simplified",
-									"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
-									"disabled": true
-								},
-								{
-									"key": "continue_straight",
-									"value": "default",
-									"description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile\n[ default (default), true, false ]",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"description": "One of the following values: directions, matching, matrix, nearest",
-									"key": "service",
-									"value": "directions"
-								},
-								{
-									"description": "Mode of transportation. Only driving is supported at the moment.",
-									"key": "profile",
-									"value": "driving"
-								},
-								{
-									"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5",
-									"key": "coordinates",
-									"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550"
-								}
-							]
-						},
-						"description": "Finds the fastest route between coordinates in the supplied order."
-					},
-					"response": []
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Matching service",
+					"name": "Matrix API",
+					"item": [
+						{
+							"name": "Genral usage",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "10,20;40,30;30,9",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "500;200;300",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+											"disabled": true
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb;curb;curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "sources",
+											"value": "0",
+											"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations",
+											"disabled": true
+										},
+										{
+											"key": "destinations",
+											"value": "2",
+											"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]",
+											"disabled": true
+										},
+										{
+											"key": "annotations",
+											"value": "distance",
+											"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration ]",
+											"disabled": true
+										},
+										{
+											"key": "fallback_speed",
+											"value": "25.65",
+											"description": "If no route found between a source/destination pair, calculate the as-the-crow-flies distance, then use this speed to estimate duration.\ndouble > 0",
+											"disabled": true
+										},
+										{
+											"key": "fallback_coordinate",
+											"value": "input",
+											"description": "When using a fallback_speed, use the user-supplied coordinate (input), or the snapped location (snapped) for calculating distances.\n[ input (default), or snapped ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "service",
+											"value": "matrix"
+										},
+										{
+											"key": "profile",
+											"value": "driving"
+										},
+										{
+											"key": "coordinates",
+											"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550"
+										}
+									]
+								},
+								"description": "Computes duration of the fastest route between all pairs of supplied coordinates. Returns the durations or distances or both between the coordinate pairs. Note that the distances are not the shortest distance between two coordinates, but rather the distances of the fastest routes."
+							},
+							"response": []
+						}
+					],
+					"description": "Computes duration of the fastest route between all pairs of supplied coordinates. Returns the durations or distances or both between the coordinate pairs. Note that the distances are not the shortest distance between two coordinates, but rather the distances of the fastest routes.",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+								"id": "11ca1eca-3302-4554-80b2-319777227626",
+								"type": "text/javascript",
 								"exec": [
 									""
-								],
-								"type": "text/javascript"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "edaecb3b-da60-48f6-bdeb-ec878a3abbd8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
 							}
 						}
 					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								":service",
-								":profile",
-								":coordinates"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}"
-								},
-								{
-									"key": "bearings",
-									"value": "0,4;10,20;30,50",
-									"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-									"disabled": true
-								},
-								{
-									"key": "radiuses",
-									"value": "",
-									"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-									"disabled": true
-								},
-								{
-									"key": "generate_hints",
-									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
-									"disabled": true
-								},
-								{
-									"key": "approaches",
-									"value": "curb;curb;curb",
-									"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": "toll",
-									"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-									"disabled": true
-								},
-								{
-									"key": "steps",
-									"value": "true",
-									"description": "Returned route steps for each route leg [ true, false (default) ]",
-									"disabled": true
-								},
-								{
-									"key": "geometries",
-									"value": "polyline",
-									"description": "Returned route geometry format (influences overview and per step)\n[ polyline (default), polyline6, geojson ]",
-									"disabled": true
-								},
-								{
-									"key": "annotations",
-									"value": "false",
-									"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
-									"disabled": true
-								},
-								{
-									"key": "overview",
-									"value": "simplified",
-									"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified (default), full, false ]",
-									"disabled": true
-								},
-								{
-									"key": "timestamps",
-									"value": "200;300;900",
-									"description": "Timestamps for the input locations in seconds since UNIX epoch. Timestamps need to be monotonically increasing.\n[ {timestamp};{timestamp}[;{timestamp} ...] \ninteger seconds since UNIX epoch",
-									"disabled": true
-								},
-								{
-									"key": "gaps",
-									"value": "split",
-									"description": "Allows the input track splitting based on huge timestamp gaps between points.\n[ split (default), ignore ]",
-									"disabled": true
-								},
-								{
-									"key": "tidy",
-									"value": "false",
-									"description": "Allows the input track modification to obtain better matching quality for noisy tracks.\n[ true, false (default) ]",
-									"disabled": true
-								},
-								{
-									"key": "waypoints",
-									"value": "0;1;2",
-									"description": "Treats input coordinates indicated by given indices as waypoints in returned Match object. Default is to treat all input coordinates as waypoints.\n[ {index};{index};{index}... ]",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "service",
-									"value": "matching",
-									"description": "One of the following values: directions, matching, matrix, nearest"
-								},
-								{
-									"key": "profile",
-									"value": "driving",
-									"description": "Mode of transportation. Only driving is supported at the moment."
-								},
-								{
-									"key": "coordinates",
-									"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
-									"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
-								}
-							]
-						},
-						"description": "Matching API matches or snaps given GPS points to the road network in the most plausible way. Please note the request might result multiple sub-traces. Large jumps in the timestamps (> 60s) or improbable transitions lead to trace splits if a complete matching could not be found. The algorithm might not be able to match all points. Outliers are removed if they can not be matched successfully."
-					},
-					"response": []
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Matrix service",
+					"name": "Nearest API",
+					"item": [
+						{
+							"name": "General usage",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "10,20",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "1000",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+											"disabled": true
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "number",
+											"value": "3",
+											"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "service",
+											"value": "nearest",
+											"description": "One of the following values: directions, matching, matrix, nearest"
+										},
+										{
+											"key": "profile",
+											"value": "driving",
+											"description": "Mode of transportation. Only driving is supported at the moment."
+										},
+										{
+											"key": "coordinates",
+											"value": "-0.16102,51.523854",
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+										}
+									]
+								},
+								"description": "Snaps a coordinate to the street network and returns the nearest n matches.\nWhere coordinates only supports a single {longitude},{latitude} entry."
+							},
+							"response": []
+						}
+					],
+					"description": "Snaps a coordinate to the street network and returns the nearest n matches.\nWhere coordinates only supports a single {longitude},{latitude} entry.",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+								"id": "1839cdcd-ea25-4128-9f84-17ae5050804a",
+								"type": "text/javascript",
 								"exec": [
 									""
-								],
-								"type": "text/javascript"
+								]
 							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								":service",
-								":profile",
-								":coordinates"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}"
-								},
-								{
-									"key": "bearings",
-									"value": "10,20;40,30;30,9",
-									"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-									"disabled": true
-								},
-								{
-									"key": "radiuses",
-									"value": "500;200;300",
-									"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-									"disabled": true
-								},
-								{
-									"key": "generate_hints",
-									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
-									"disabled": true
-								},
-								{
-									"key": "approaches",
-									"value": "curb;curb;curb",
-									"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": "toll",
-									"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-									"disabled": true
-								},
-								{
-									"key": "sources",
-									"value": "0",
-									"description": "Use location with given index as source.\n [ {index};{index}[;{index} ...] or all (default) ]\n=> index\t 0 <= integer < #locations",
-									"disabled": true
-								},
-								{
-									"key": "destinations",
-									"value": "2",
-									"description": "Use location with given index as destination.\n[ {index};{index}[;{index} ...] or all (default) ]",
-									"disabled": true
-								},
-								{
-									"key": "annotations",
-									"value": "distance",
-									"description": "Returns additional metadata for each coordinate along the route geometry. \n[ true, false (default), nodes, distance, duration ]",
-									"disabled": true
-								},
-								{
-									"key": "fallback_speed",
-									"value": "25.65",
-									"description": "If no route found between a source/destination pair, calculate the as-the-crow-flies distance, then use this speed to estimate duration.\ndouble > 0",
-									"disabled": true
-								},
-								{
-									"key": "fallback_coordinate",
-									"value": "input",
-									"description": "When using a fallback_speed, use the user-supplied coordinate (input), or the snapped location (snapped) for calculating distances.\n[ input (default), or snapped ]",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "service",
-									"value": "matrix"
-								},
-								{
-									"key": "profile",
-									"value": "driving"
-								},
-								{
-									"key": "coordinates",
-									"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550"
-								}
-							]
 						},
-						"description": "Computes duration of the fastest route between all pairs of supplied coordinates. Returns the durations or distances or both between the coordinate pairs. Note that the distances are not the shortest distance between two coordinates, but rather the distances of the fastest routes."
-					},
-					"response": []
-				},
-				{
-					"name": "Nearest service",
-					"event": [
 						{
-							"listen": "prerequest",
+							"listen": "test",
 							"script": {
-								"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+								"id": "3692a729-06c1-4797-af17-4dc81a066a00",
+								"type": "text/javascript",
 								"exec": [
 									""
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								":service",
-								":profile",
-								":coordinates"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}"
-								},
-								{
-									"key": "bearings",
-									"value": "10,20",
-									"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
-									"disabled": true
-								},
-								{
-									"key": "radiuses",
-									"value": "1000",
-									"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
-									"disabled": true
-								},
-								{
-									"key": "generate_hints",
-									"value": "false",
-									"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
-									"disabled": true
-								},
-								{
-									"key": "approaches",
-									"value": "curb",
-									"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": "toll",
-									"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
-									"disabled": true
-								},
-								{
-									"key": "number",
-									"value": "3",
-									"description": "Number of nearest segments that should be returned.\n[ integer >= 1 (default 1) ]",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "service",
-									"value": "nearest",
-									"description": "One of the following values: directions, matching, matrix, nearest"
-								},
-								{
-									"key": "profile",
-									"value": "driving",
-									"description": "Mode of transportation. Only driving is supported at the moment."
-								},
-								{
-									"key": "coordinates",
-									"value": "-0.16102,51.523854",
-									"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
-								}
-							]
-						},
-						"description": "Snaps a coordinate to the street network and returns the nearest n matches.\nWhere coordinates only supports a single {longitude},{latitude} entry."
-					},
-					"response": []
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Balance API",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance.php?key={{Your_API_Key}}",
-					"host": [
-						"{{LocationIQ_Endpoint_URL}}"
-					],
-					"path": [
-						"v1",
-						"balance.php"
-					],
-					"query": [
-						{
-							"key": "key",
-							"value": "{{Your_API_Key}}"
-						}
-					]
+			"item": [
+				{
+					"name": "General usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance.php?key={{Your_API_Key}}",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"balance.php"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}"
+								}
+							]
+						},
+						"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC)."
+					},
+					"response": []
+				}
+			],
+			"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC).",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f8173964-e4b1-4ef0-b790-cc756ca93ac5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				},
-				"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC)."
-			},
-			"response": []
+				{
+					"listen": "test",
+					"script": {
+						"id": "24d4b714-f5c2-49a5-b103-143f159b1445",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Nearby-Points of Interest API",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=railway_station",
-					"host": [
-						"{{LocationIQ_Endpoint_URL}}"
-					],
-					"path": [
-						"v1",
-						"nearby.php"
-					],
-					"query": [
-						{
-							"key": "key",
-							"value": "{{Your_API_Key}}",
-							"description": "Authentication Key"
+			"name": "Nearby API",
+			"item": [
+				{
+					"name": "PoI - railway station",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=railway_station",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"nearby.php"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}",
+									"description": "Authentication Key"
+								},
+								{
+									"key": "lat",
+									"value": "40.7484284",
+									"description": "Latitude of the location to generate the PoI list for."
+								},
+								{
+									"key": "lon",
+									"value": "-73.9856546",
+									"description": "Longitude of the location to generate the PoI list for."
+								},
+								{
+									"key": "radius",
+									"value": "3000",
+									"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters.",
+									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "railway_station",
+									"description": "PoI to generate the list for. Defaults to country (check Nearby-Countries). "
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "No of results to look for. Defaults to 10. Max value is 50. (Pagination is not supported yet).",
+									"disabled": true
+								}
+							]
 						},
-						{
-							"key": "lat",
-							"value": "40.7484284",
-							"description": "Latitude of the location to generate the PoI list for."
-						},
-						{
-							"key": "lon",
-							"value": "-73.9856546",
-							"description": "Longitude of the location to generate the PoI list for."
-						},
-						{
-							"key": "radius",
-							"value": "3000",
-							"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters.",
-							"disabled": true
-						},
-						{
-							"key": "tag",
-							"value": "railway_station",
-							"description": "PoI to generate the list for. Defaults to country (check Nearby-Countries). "
-						},
-						{
-							"key": "limit",
-							"value": "10",
-							"description": "No of results to look for. Defaults to 10. Max value is 50. (Pagination is not supported yet).",
-							"disabled": true
-						}
-					]
+						"description": "The Nearby Points of Interest (PoI) API returns specified PoIs or Places around a given coordinate.\r\n\r\n"
+					},
+					"response": []
 				},
-				"description": "The Nearby Points of Interest (PoI) API returns specified PoIs or Places around a given coordinate.\r\n\r\n"
-			},
-			"response": []
-		},
-		{
-			"name": "Nearby-Countries API",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&radius=400000&tag=countries",
-					"host": [
-						"{{LocationIQ_Endpoint_URL}}"
-					],
-					"path": [
-						"v1",
-						"nearby.php"
-					],
-					"query": [
-						{
-							"key": "key",
-							"value": "{{Your_API_Key}}",
-							"description": "Authentication key"
+				{
+					"name": "Countries - General usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&radius=400000&tag=countries",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"nearby.php"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}",
+									"description": "Authentication key"
+								},
+								{
+									"key": "lat",
+									"value": "40.7484284",
+									"description": "Latitude of the location to generate the POI list for."
+								},
+								{
+									"key": "lon",
+									"value": "-73.9856546",
+									"description": "Longitude of the location to generate the POI list for."
+								},
+								{
+									"key": "radius",
+									"value": "400000",
+									"description": "Radius (in meters) from the given latitude and longitude. Limited to 5,000,000 meters (5000 KM / 3106 miles)"
+								},
+								{
+									"key": "tag",
+									"value": "countries",
+									"description": "(optional) defaults to country. [countries]"
+								}
+							]
 						},
-						{
-							"key": "lat",
-							"value": "40.7484284",
-							"description": "Latitude of the location to generate the POI list for."
-						},
-						{
-							"key": "lon",
-							"value": "-73.9856546",
-							"description": "Longitude of the location to generate the POI list for."
-						},
-						{
-							"key": "radius",
-							"value": "400000",
-							"description": "Radius (in meters) from the given latitude and longitude. Limited to 5,000,000 meters (5000 KM / 3106 miles)"
-						},
-						{
-							"key": "tag",
-							"value": "countries",
-							"description": "(optional) defaults to country. [countries]"
-						}
-					]
+						"description": "The Nearby Countries API returns countries whose geographic borders lie within a given radius."
+					},
+					"response": []
+				}
+			],
+			"description": "The Nearby Points of Interest (PoI) API returns specified PoIs or Places around a given coordinate.\r\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "37d7cd3b-052e-4272-bfd2-357124031b46",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				},
-				"description": "The Nearby Countries API returns countries whose geographic borders lie within a given radius."
-			},
-			"response": []
+				{
+					"listen": "test",
+					"script": {
+						"id": "44966eba-8e61-48fd-bbee-13ac49925dcf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [

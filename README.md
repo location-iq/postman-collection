@@ -2,7 +2,7 @@
 
 We recommend using REST clients like <a href="https://www.postman.com" target="_blank">Postman</a> to test our APIs. Please click on the link below to download the Postman collection with pre-made examples and get started.
 
-###Load Collection
+### Load Collection
 
 1. Download the provided <br/>
     - <a href="https://raw.githubusercontent.com/location-iq/postman-collection/master/LocationIQ_Collection_v1.1.0.postman_collection.json" target="_blank">LocationIQ Collection</a> file (`Right-Click -> Save As`). 
@@ -10,7 +10,7 @@ We recommend using REST clients like <a href="https://www.postman.com" target="_
 2. Open Postman and click `Import` and choose the LocationIQ Collection file that was downloaded from the link above. <br/> <br/>
 ![](../images-pm/importCollection.png)
 
-###Load Environment
+### Load Environment
 
 1. Download the environment file depending on the endpoint you want to use.
     - <a href="https://raw.githubusercontent.com/location-iq/postman-collection/master/environments/LocationIQ_EU_Endpoint.postman_environment.json" target="_blank">EU endpoint Environment File</a>

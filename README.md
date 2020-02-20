@@ -18,18 +18,18 @@ We recommend using REST clients like <a href="https://www.postman.com" target="_
     
 <br/>
 2. Now click on settings icon from the Postman app and click `Manage Environments` <br/> <br/>
-![](../images-pm/step1.png)
+![](./images-pm/step1.png)
 <br/><br/>
 3. Click on `Import`. <br/> <br/>
-![](../images-pm/step2.png ) 
+![](./images-pm/step2.png ) 
 <br/><br/>
 4. Import the json file that was provided. <br/> <br/>
-![](../images-pm/step3.png)
+![](./images-pm/step3.png)
 <br/><br/>
 5. To add the API key to the environment, click `Manage Environments` <br/> <br/>
-![](../images-pm/step2.png)
+![](./images-pm/step2.png)
 <br/><br/>
 6. Click on the Environment name and replace "Enter your API Key/access token here" with your API Key/Access token. <br/> <br/>
-![](../images-pm/apiKey.png)
+![](./images-pm/apiKey.png)
 <br/><br/>
 7. In the `Manage Environments` window, click `Update` to save.

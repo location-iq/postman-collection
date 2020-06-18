@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "2ee638c5-159f-4592-89f0-fa004aede1f9",
-		"name": "LocationIQ Collection v1.1.0",
+		"_postman_id": "d94de6fd-38bd-4b73-b252-8f8bf52a7a20",
+		"name": "LocationIQ Collection v1.2.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1466,19 +1466,19 @@
 									],
 									"variable": [
 										{
-											"description": "One of the following values: directions, matching, matrix, nearest",
 											"key": "service",
-											"value": "directions"
+											"value": "directions",
+											"description": "One of the following values: directions, matching, matrix, nearest"
 										},
 										{
-											"description": "Mode of transportation. Only driving is supported at the moment.",
 											"key": "profile",
-											"value": "driving"
+											"value": "driving",
+											"description": "Mode of transportation. Only driving is supported at the moment."
 										},
 										{
-											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5",
 											"key": "coordinates",
-											"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550"
+											"value": "-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550",
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
 										}
 									]
 								},
@@ -2118,6 +2118,71 @@
 					"listen": "test",
 					"script": {
 						"id": "44966eba-8e61-48fd-bbee-13ac49925dcf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Timezone API",
+			"item": [
+				{
+					"name": "General Usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/timezone.php?key={{Your_API_Key}}&lat=17.3850&lon=78.4867",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"timezone.php"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}",
+									"description": "Authentication key"
+								},
+								{
+									"key": "lat",
+									"value": "17.3850",
+									"description": "Latitude of the location"
+								},
+								{
+									"key": "lon",
+									"value": "78.4867",
+									"description": "Longitude of the location"
+								}
+							]
+						},
+						"description": "The Timezone API provides time offset data for locations on the surface of the earth."
+					},
+					"response": []
+				}
+			],
+			"description": "The Timezone API provides time offset data for locations on the surface of the earth.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6a64f8fa-cbe2-4a6f-8797-fd83cfe0c5cc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "52dbdd38-d6c4-48f0-a5b4-b1a3e1c415df",
 						"type": "text/javascript",
 						"exec": [
 							""

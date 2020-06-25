@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "d94de6fd-38bd-4b73-b252-8f8bf52a7a20",
-		"name": "LocationIQ Collection v1.2.0",
+		"name": "LocationIQ Collection v2.0.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -156,7 +156,13 @@
 								{
 									"key": "postaladdress",
 									"value": "1",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "0",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
 									"disabled": true
 								}
 							]
@@ -311,7 +317,13 @@
 								{
 									"key": "postaladdress",
 									"value": "1",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "0",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
 									"disabled": true
 								}
 							]
@@ -492,7 +504,13 @@
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "0",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
 									"disabled": true
 								}
 							]
@@ -647,7 +665,13 @@
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "0",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
 									"disabled": true
 								}
 							]
@@ -813,7 +837,13 @@
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "0",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
 									"disabled": true
 								}
 							]
@@ -938,7 +968,13 @@
 								{
 									"key": "postaladdress",
 									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "0",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
 									"disabled": true
 								}
 							]
@@ -1022,7 +1058,7 @@
 								{
 									"key": "countrycodes",
 									"value": "us",
-									"description": "Limit search to a specific of country.",
+									"description": "Limit search to a specific of country. Now supports multiple countrycodes. For example : \"us,ca\"",
 									"disabled": true
 								},
 								{
@@ -1040,13 +1076,19 @@
 								{
 									"key": "accept-language",
 									"value": "en",
-									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
+									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 7 languages: English en, Dutch nl, French fr, German de, Italian it, Spanish es and Swedish sv.",
 									"disabled": true
 								},
 								{
 									"key": "tag",
 									"value": "place",
-									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city,\nTo restrict the results to all of OSM class place: tag=place",
+									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Now supports multiple tags. Examples :-\n1. To return only cities: tag=place:city\n2. To return only types of place, such as Suburbs, Towns and Cities, use a wildcard: tag=place:*\n3. To restrict results to specific types of place: tag=place:city,place:town,place:village\n4. To restrict results to cafes: tag=amenity:cafe",
+									"disabled": true
+								},
+								{
+									"key": "dedupe",
+									"value": "0",
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
 									"disabled": true
 								}
 							]
@@ -1061,7 +1103,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete.php?key={{Your_API_Key}}&q=Empire State&countrycodes=in",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete.php?key={{Your_API_Key}}&q=Empire State&countrycodes=fr",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
@@ -1100,8 +1142,8 @@
 								},
 								{
 									"key": "countrycodes",
-									"value": "in",
-									"description": "Limit search to a specific of country."
+									"value": "fr",
+									"description": "Limit search to a specific of country. Now supports multiple countrycodes. For example : \"us,ca\""
 								},
 								{
 									"key": "json_callback",
@@ -1118,13 +1160,19 @@
 								{
 									"key": "accept-language",
 									"value": "en",
-									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
+									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 7 languages: English en, Dutch nl, French fr, German de, Italian it, Spanish es and Swedish sv.",
 									"disabled": true
 								},
 								{
 									"key": "tag",
 									"value": "place",
-									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city,\nTo restrict the results to all of OSM class place: tag=place",
+									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Now supports multiple tags. Examples :-\n1. To return only cities: tag=place:city\n2. To return only types of place, such as Suburbs, Towns and Cities, use a wildcard: tag=place:*\n3. To restrict results to specific types of place: tag=place:city,place:town,place:village\n4. To restrict results to cafes: tag=amenity:cafe",
+									"disabled": true
+								},
+								{
+									"key": "dedupe",
+									"value": "0",
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
 									"disabled": true
 								}
 							]
@@ -1178,7 +1226,7 @@
 								{
 									"key": "countrycodes",
 									"value": "us",
-									"description": "Limit search to a specific of country.",
+									"description": "Limit search to a specific of country. Now supports multiple countrycodes. For example : \"us,ca\"",
 									"disabled": true
 								},
 								{
@@ -1196,13 +1244,19 @@
 								{
 									"key": "accept-language",
 									"value": "en",
-									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 4 languages: English en, French fr, German de and Italian it. If you'd like us to add support for a specific language, please reach out.",
+									"description": "Preferred language for showing search results. Defaults to en. Unlike Search and Reverse endpoints, the Autocomplete endpoint supports only a single 2 digit language code. The Autocomplete endpoint currently support 7 languages: English en, Dutch nl, French fr, German de, Italian it, Spanish es and Swedish sv.",
 									"disabled": true
 								},
 								{
 									"key": "tag",
 									"value": "place",
-									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city,\nTo restrict the results to all of OSM class place: tag=place",
+									"description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Now supports multiple tags. Examples :-\n1. To return only cities: tag=place:city\n2. To return only types of place, such as Suburbs, Towns and Cities, use a wildcard: tag=place:*\n3. To restrict results to specific types of place: tag=place:city,place:town,place:village\n4. To restrict results to cafes: tag=amenity:cafe",
+									"disabled": true
+								},
+								{
+									"key": "dedupe",
+									"value": "0",
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
 									"disabled": true
 								}
 							]
@@ -1238,7 +1292,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Directions Service",
+			"name": "Routing APIs",
 			"item": [
 				{
 					"name": "Directions API",
@@ -1897,7 +1951,7 @@
 										{
 											"key": "service",
 											"value": "nearest",
-											"description": "One of the following values: directions, matching, matrix, nearest"
+											"description": "One of the following values: directions, matching, matrix, nearest, optimize"
 										},
 										{
 											"key": "profile",
@@ -1939,6 +1993,268 @@
 							}
 						}
 					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Optimize API",
+					"item": [
+						{
+							"name": "General usage",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "10,20",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "1000",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+											"disabled": true
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "roundtrip",
+											"value": "true",
+											"description": "Returned route is a roundtrip (route returns to first location) [ true | false ]",
+											"disabled": true
+										},
+										{
+											"key": "source",
+											"value": "any",
+											"description": "Returned route starts at any or first coordinate [ any | first ]",
+											"disabled": true
+										},
+										{
+											"key": "destination",
+											"value": "any",
+											"description": "Returned route ends at any or last coordinate [ any | last ]",
+											"disabled": true
+										},
+										{
+											"key": "steps",
+											"value": "false",
+											"description": "Returned route instructions for each trip [ true | false ]",
+											"disabled": true
+										},
+										{
+											"key": "annotations",
+											"value": "false",
+											"description": "Returns additional metadata for each coordinate along the route geometry.\n[ true | false | nodes | distance |  duration | datasources | weight | speed ]",
+											"disabled": true
+										},
+										{
+											"key": "geometries",
+											"value": "polyline",
+											"description": "Returned route geometry format (influences overview and per step) [ polyline  | polyline6 | geojson ]",
+											"disabled": true
+										},
+										{
+											"key": "overview",
+											"value": "simplified",
+											"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified | full | false ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "service",
+											"value": "optimize",
+											"description": "One of the following values: directions, matching, matrix, nearest, optimize"
+										},
+										{
+											"key": "profile",
+											"value": "driving",
+											"description": "Mode of transportation. Only driving is supported at the moment."
+										},
+										{
+											"key": "coordinates",
+											"value": "-0.127627,51.503355;-0.087199,51.509562;-0.076134,51.508037",
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5"
+										}
+									]
+								},
+								"description": "Round trip in London with three stops."
+							},
+							"response": []
+						},
+						{
+							"name": "Fixed source & destination",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e3594-0460-4fd3-bd23-823b0936692a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocationIQ_Endpoint_URL}}/v1/:service/:profile/:coordinates?key={{Your_API_Key}}&source=first&destination=last",
+									"host": [
+										"{{LocationIQ_Endpoint_URL}}"
+									],
+									"path": [
+										"v1",
+										":service",
+										":profile",
+										":coordinates"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{Your_API_Key}}"
+										},
+										{
+											"key": "bearings",
+											"value": "10,20",
+											"description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction.\nList of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\n\nInput Value :- {bearing};{bearing}[;{bearing} ...]\nBearing follows the following format :\nbearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+											"disabled": true
+										},
+										{
+											"key": "radiuses",
+											"value": "1000",
+											"description": "Limits the search to given radius in meters\nRadiuses array length should be same as coordinates array, eaach value separated by semi-colon.\nInput Value - {radius};{radius}[;{radius} ...]\nRadius has following format :-\ndouble >= 0 or unlimited (default)",
+											"disabled": true
+										},
+										{
+											"key": "generate_hints",
+											"value": "false",
+											"description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter.\nInput Value - true (default), false\nFormat - Base64 String",
+											"disabled": true
+										},
+										{
+											"key": "approaches",
+											"value": "curb",
+											"description": "Keep waypoints on curb side.\nInput Value - {approach};{approach}[;{approach} ...]\nFormat - curb or unrestricted (default)",
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": "toll",
+											"description": "Additive list of classes to avoid, order does not matter.\ninput Value - {class}[,{class}]\nFormat - A class name determined by the profile or none.",
+											"disabled": true
+										},
+										{
+											"key": "roundtrip",
+											"value": "true",
+											"description": "Returned route is a roundtrip (route returns to first location) [ true | false ]",
+											"disabled": true
+										},
+										{
+											"key": "source",
+											"value": "first",
+											"description": "Returned route starts at any or first coordinate [ any | first ]"
+										},
+										{
+											"key": "destination",
+											"value": "last",
+											"description": "Returned route ends at any or last coordinate [ any | last ]"
+										},
+										{
+											"key": "steps",
+											"value": "false",
+											"description": "Returned route instructions for each trip [ true | false ]",
+											"disabled": true
+										},
+										{
+											"key": "annotations",
+											"value": "false",
+											"description": "Returns additional metadata for each coordinate along the route geometry.\n[ true | false | nodes | distance |  duration | datasources | weight | speed ]",
+											"disabled": true
+										},
+										{
+											"key": "geometries",
+											"value": "polyline",
+											"description": "Returned route geometry format (influences overview and per step) [ polyline  | polyline6 | geojson ]",
+											"disabled": true
+										},
+										{
+											"key": "overview",
+											"value": "simplified",
+											"description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all.\n[ simplified | full | false ]",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"description": "One of the following values: directions, matching, matrix, nearest, optimize",
+											"key": "service",
+											"value": "optimize"
+										},
+										{
+											"description": "Mode of transportation. Only driving is supported at the moment.",
+											"key": "profile",
+											"value": "driving"
+										},
+										{
+											"description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}).\npolyline follows Google's polyline format with precision 5",
+											"key": "coordinates",
+											"value": "-0.127627,51.503355;-0.087199,51.509562;-0.076134,51.508037"
+										}
+									]
+								},
+								"description": "Round trip in London with four stops, starting at the first stop, ending at the last."
+							},
+							"response": []
+						}
+					],
+					"description": "Optimize API solves the Traveling Salesman Problem(TSP) using a greedy heuristic (farthest-insertion algorithm) for 10 or more waypoints and uses brute force for less than 10 waypoints. The returned path does not have to be the fastest path. As TSP is NP-hard it only returns an approximation. Note that all input coordinates have to be connected for the optimize service to work.",
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}

@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "d94de6fd-38bd-4b73-b252-8f8bf52a7a20",
-		"name": "LocationIQ Collection v2.0.0",
+		"name": "LocationIQ Collection v1.3.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1058,7 +1058,7 @@
 								{
 									"key": "countrycodes",
 									"value": "us",
-									"description": "Limit search to a specific of country. Now supports multiple countrycodes. For example : \"us,ca\"",
+									"description": "Limit search to a list of countries. Example : \"us,ca\", For more info refer https://locationiq.com/docs-html/index.html#country-codes",
 									"disabled": true
 								},
 								{
@@ -1088,7 +1088,7 @@
 								{
 									"key": "dedupe",
 									"value": "0",
-									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested. Defaults to 0 for backward compatibility.",
 									"disabled": true
 								}
 							]
@@ -1143,7 +1143,7 @@
 								{
 									"key": "countrycodes",
 									"value": "fr",
-									"description": "Limit search to a specific of country. Now supports multiple countrycodes. For example : \"us,ca\""
+									"description": "Limit search to a list of countries. Example : \"us,ca\", For more info refer https://locationiq.com/docs-html/index.html#country-codes"
 								},
 								{
 									"key": "json_callback",
@@ -1172,7 +1172,7 @@
 								{
 									"key": "dedupe",
 									"value": "0",
-									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested. Defaults to 0 for backward compatibility.",
 									"disabled": true
 								}
 							]
@@ -1226,7 +1226,7 @@
 								{
 									"key": "countrycodes",
 									"value": "us",
-									"description": "Limit search to a specific of country. Now supports multiple countrycodes. For example : \"us,ca\"",
+									"description": "Limit search to a list of countries. Example : \"us,ca\", For more info refer https://locationiq.com/docs-html/index.html#country-codes",
 									"disabled": true
 								},
 								{
@@ -1256,7 +1256,7 @@
 								{
 									"key": "dedupe",
 									"value": "0",
-									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+									"description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Our Geocoder will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested. Defaults to 0 for backward compatibility.",
 									"disabled": true
 								}
 							]

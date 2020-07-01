@@ -5,7 +5,7 @@ We recommend using REST clients like <a href="https://www.postman.com" target="_
 ### Load Collection
 
 1. Download the provided <br/>
-    - <a href="https://raw.githubusercontent.com/location-iq/postman-collection/master/LocationIQ_Collection_v2.0.0.postman_collection.json" target="_blank">LocationIQ Collection</a> file (`Right-Click -> Save As`). 
+    - <a href="https://raw.githubusercontent.com/location-iq/postman-collection/master/LocationIQ_Collection_v1.3.0.postman_collection.json" target="_blank">LocationIQ Collection</a> file (`Right-Click -> Save As`). 
     <br/> <br/>
 2. Open Postman and click `Import` and choose the LocationIQ Collection file that was downloaded from the link above. <br/> <br/>
 <img src="images-pm/importCollection.png">

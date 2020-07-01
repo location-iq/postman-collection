@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "d94de6fd-38bd-4b73-b252-8f8bf52a7a20",
-		"name": "LocationIQ Collection v1.3.0",
+		"name": "LocationIQ Collection v1.2.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1e5caeec-d42d-450f-9f60-ef45a1ce878b",
+		"_postman_id": "b96a152c-60bf-419c-be70-8bfd5454358e",
 		"name": "LocationIQ Collection v1.4.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,13 +15,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search?key={{Your_API_Key}}&q=Empire State Building&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"search.php"
+								"search"
 							],
 							"query": [
 								{
@@ -183,13 +183,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&q=Empire State Building&format=json&countrycodes=us",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search?key={{Your_API_Key}}&q=Empire State Building&format=json&countrycodes=us",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"search.php"
+								"search"
 							],
 							"query": [
 								{
@@ -350,13 +350,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search?key={{Your_API_Key}}&street=20 W 34th St&city=New York&county=New York County&state=New York&country=United States of America&postalcode=10001&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"search.php"
+								"search"
 							],
 							"query": [
 								{
@@ -543,13 +543,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search.php?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/search?key={{Your_API_Key}}&postalcode=10001&countrycodes=us&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"search.php"
+								"search"
 							],
 							"query": [
 								{
@@ -736,13 +736,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse?key={{Your_API_Key}}&lat=40.7487727&lon=-73.9849336&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"reverse.php"
+								"reverse"
 							],
 							"query": [
 								{
@@ -885,13 +885,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse.php?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"reverse.php"
+								"reverse"
 							],
 							"query": [
 								{
@@ -1048,13 +1048,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete.php?key={{Your_API_Key}}&q=Empire State",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete?key={{Your_API_Key}}&q=Empire State",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"autocomplete.php"
+								"autocomplete"
 							],
 							"query": [
 								{
@@ -1139,13 +1139,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete.php?key={{Your_API_Key}}&q=Empire State&countrycodes=fr",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete?key={{Your_API_Key}}&q=Empire State&countrycodes=fr",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"autocomplete.php"
+								"autocomplete"
 							],
 							"query": [
 								{
@@ -1229,13 +1229,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete.php?key={{Your_API_Key}}&q=Empire State&viewbox=-132.84908,47.69382,-70.44674,30.82531&bounded=1",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/autocomplete?key={{Your_API_Key}}&q=Empire State&viewbox=-132.84908,47.69382,-70.44674,30.82531&bounded=1",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"autocomplete.php"
+								"autocomplete"
 							],
 							"query": [
 								{
@@ -2288,13 +2288,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance.php?key={{Your_API_Key}}",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance?key={{Your_API_Key}}",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"balance.php"
+								"balance"
 							],
 							"query": [
 								{
@@ -2339,13 +2339,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=railway_station",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&radius=3000&tag=railway_station",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"nearby.php"
+								"nearby"
 							],
 							"query": [
 								{
@@ -2366,8 +2366,7 @@
 								{
 									"key": "radius",
 									"value": "3000",
-									"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters.",
-									"disabled": true
+									"description": "Radius (in meters) from the given latitude and longitude to generate the PoI list for. Defaults to 100 meters. Max value is 30000 meters."
 								},
 								{
 									"key": "tag",
@@ -2392,13 +2391,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=restaurant",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=restaurant",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"nearby.php"
+								"nearby"
 							],
 							"query": [
 								{
@@ -2445,13 +2444,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=amenity:*",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=amenity:*",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"nearby.php"
+								"nearby"
 							],
 							"query": [
 								{
@@ -2498,13 +2497,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=aeroway:aerodrome,tourism:hotel,amenity:parking",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=aeroway:aerodrome,tourism:hotel,amenity:parking",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"nearby.php"
+								"nearby"
 							],
 							"query": [
 								{
@@ -2551,13 +2550,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=amenity:*,!amenity:gym",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=amenity:*,!amenity:gym",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"nearby.php"
+								"nearby"
 							],
 							"query": [
 								{
@@ -2604,13 +2603,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby.php?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=!amenity:gym",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/nearby?key={{Your_API_Key}}&lat=40.7484284&lon=-73.9856546&tag=!amenity:gym",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"nearby.php"
+								"nearby"
 							],
 							"query": [
 								{
@@ -2683,13 +2682,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/timezone.php?key={{Your_API_Key}}&lat=17.3850&lon=78.4867",
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/timezone?key={{Your_API_Key}}&lat=17.3850&lon=78.4867",
 							"host": [
 								"{{LocationIQ_Endpoint_URL}}"
 							],
 							"path": [
 								"v1",
-								"timezone.php"
+								"timezone"
 							],
 							"query": [
 								{
@@ -3197,7 +3196,7 @@
 					]
 				},
 				{
-					"name": "Default",
+					"name": "General Usage",
 					"request": {
 						"method": "GET",
 						"header": [],

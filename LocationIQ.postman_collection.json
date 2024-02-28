@@ -3054,6 +3054,18 @@
 											"key": "path",
 											"value": "17.452638,78.380332|17.452550,78.38026|17.452033,78.380734|17.4519517,78.381078|17.452008,78.381426|17.452524,78.38187",
 											"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters"
+										},
+										{
+											"key": "linejoin",
+											"value": "round",
+											"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+											"disabled": true
+										},
+										{
+											"key": "linecap",
+											"value": "round",
+											"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
+											"disabled": true
 										}
 									]
 								}
@@ -3129,6 +3141,18 @@
 											"key": "path",
 											"value": "weight:4|color:blue|17.452638,78.380332|17.452550,78.38026|17.452033,78.380734|17.4519517,78.381078|17.452008,78.381426|17.452524,78.38187",
 											"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters"
+										},
+										{
+											"key": "linejoin",
+											"value": "round",
+											"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+											"disabled": true
+										},
+										{
+											"key": "linecap",
+											"value": "round",
+											"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
+											"disabled": true
 										}
 									]
 								}
@@ -3204,6 +3228,18 @@
 											"key": "path",
 											"value": "weight:4|color:blue|enc:_voiBatk}MPLfB}ANeAKeAeBwA",
 											"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters"
+										},
+										{
+											"key": "linejoin",
+											"value": "round",
+											"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+											"disabled": true
+										},
+										{
+											"key": "linecap",
+											"value": "round",
+											"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
+											"disabled": true
 										}
 									]
 								}
@@ -3281,6 +3317,18 @@
 									"key": "path",
 									"value": "fillcolor:#add8e6|weight:1|color:blue|17.452945,78.380055|17.452765,78.382026|17.452020,78.381375|17.452045,78.380846|17.452945,78.380055",
 									"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters",
+									"disabled": true
+								},
+								{
+									"key": "linejoin",
+									"value": "round",
+									"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+									"disabled": true
+								},
+								{
+									"key": "linecap",
+									"value": "round",
+									"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
 									"disabled": true
 								}
 							]

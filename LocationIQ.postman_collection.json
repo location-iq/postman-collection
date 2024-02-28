@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b96a152c-60bf-419c-be70-8bfd5454358e",
+		"_postman_id": "3cd92646-0f8c-48f3-b61d-a7fd65d78d73",
 		"name": "LocationIQ Collection v1.4.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -876,143 +876,6 @@
 							]
 						},
 						"description": "It takes latitude and longitude as input to reverse geocode.\n\n> Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
-					},
-					"response": []
-				},
-				{
-					"name": "Using OSM ID & Type",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								"reverse"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}",
-									"description": "Authentication key."
-								},
-								{
-									"key": "osm_type",
-									"value": "W",
-									"description": "A specific osm type, node / way / relation to search an address for [ N, W , R ], only applicable when neither (lat lon) is present. That is use in combination osm_id and osm_type or lat and lon to get result"
-								},
-								{
-									"key": "osm_id",
-									"value": "34633854",
-									"description": "A specific osm node / way / relation to return an address for"
-								},
-								{
-									"key": "zoom",
-									"value": "",
-									"description": "Level of detail required where 0 is country and 18 is house/building. Defaults to 18. A lower number increases speed of the server's response. ",
-									"disabled": true
-								},
-								{
-									"key": "format",
-									"value": "json",
-									"description": "Output Format. Defaults to xml"
-								},
-								{
-									"key": "addressdetails",
-									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 1.",
-									"disabled": true
-								},
-								{
-									"key": "namedetails",
-									"value": "0",
-									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
-									"disabled": true
-								},
-								{
-									"key": "accept_language",
-									"value": "en",
-									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. ",
-									"disabled": true
-								},
-								{
-									"key": "json_callback",
-									"value": "",
-									"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_geojson",
-									"value": "",
-									"description": "Output geometry of results in geojson format.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_kml",
-									"value": "",
-									"description": "Output geometry of results in kml format.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_svg",
-									"value": "",
-									"description": "Output geometry of results in svg format.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_text",
-									"value": "",
-									"description": "Output geometry of results as a WKT.",
-									"disabled": true
-								},
-								{
-									"key": "extratags",
-									"value": "0",
-									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
-									"disabled": true
-								},
-								{
-									"key": "normalizecity",
-									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
-									"disabled": true
-								},
-								{
-									"key": "statecode",
-									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
-									"disabled": true
-								},
-								{
-									"key": "showdistance",
-									"value": "0",
-									"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]",
-									"disabled": true
-								},
-								{
-									"key": "postaladdress",
-									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
-									"disabled": true
-								},
-								{
-									"key": "normalizeaddress",
-									"value": "0",
-									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
-									"disabled": true
-								},
-								{
-									"key": "normalizecity",
-									"value": "0",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
-									"disabled": true
-								}
-							]
-						},
-						"description": "It takes OSM ID & Type as input.\n\n> Reverse geocoding with OSM ID & Type is the process of converting an object represented by OSM ID and Type ( node, way and relations [N,W,R] ) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
 					},
 					"response": []
 				}
@@ -3273,6 +3136,131 @@
 				}
 			],
 			"description": "# Static Maps\n\nStatic maps are standalone images (in JPG or PNG format) that can be displayed on web and mobile devices without the aid of a mapping library or API. Our Static Maps API returns an image in response to an HTTP request. For each request, you can specify the map's location, size of the image, zoom level, type of map. You can also place markers or draw paths at locations on the map.\n\nYou can simply embed static map image within an `<img>` tag's src attribute.\n\n<h2 id='static-maps_usage'>Usage</h2>\n\nRequests can be sent to the following endpoint\n\n `GET https://maps.locationiq.com/v3/staticmap`\n\n<h2 id='static-maps_query-parameters'>Query Parameters</h2>\n\n\n Name            | Description        | Required | Values\n--------------- | ------------------- | ----- | -----------------\n  key           | Authentication key. | Yes      |  Access token\n  center        | Defines the center of the map. It takes a comma seperated value of a latitude, longitude pair. This parameter is required if `markers` are not defined. | Either | Latitude [`-90` to `90`], Longitude [`-180` to `180`] |\n  zoom          | Set the zoom level for the map. Required if markers are not present. Defaults to `18` | Yes | [`0` to `18`]\n  scale         | Affects the number of pixels that are returned. Defaults to `1`. | No | [`1`,`2`].\n  size          | Defines the rectangular dimensions of the map image. This parameter takes a string of the form `{width}x{height}`. Defaults to `300x300`.| No | &lt;string&gt;\n  format        | Defines the format of the resulting image. Defaults to `png`. | No |  [`jpeg` &#124; `jpg` &#124; `png`]\n  maptype       | Defines the type of the map to construct. Only `roadmap` is supported at the moment. | No | &lt;string&gt;\n  markers       | Defines one or more markers to overlay on the map. Parameters are specified as `key:value` seperated by Pipe character. See below for the full list of parameters. Required if `center` is not set. | Either\n  path          | Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters | No\n\n### Markers\nMarkers are a type of overlay used to identify locations on the map. The `markers` parameter accepts a set of values in the following format:\n\n    markers=icon:<icon_name>|markerStyles|markerLocation&markers=icon:<icon_name>|markerStyles|markerLocation\n\n\nFor using same icon-name for all markerLocations, you can send multiple markerLocations in the same markers parameter.\n\n    markers=icon:<icon_name>|markerLocation|markerLocation|..\n\n\nBelow are the list of values that are accepted by markers param :\n\n* `icon` : Icon to use for the marker. Must choose one of the icons mentioned below. If an invalid icon is specified, the marker will not be rendered. Below are the available icon names :\n    <br />\n    <table>\n    <tr>\n    <td><image src=\"images/large-red-cutout.png\" >large-red-cutout</td><td><image src=\"images/small-red-cutout.png\">small-red-cutout</td><td><image src=\"images/large-red-blank.png\" >large-red-blank</td><td><image src=\"images/small-red-blank.png\" >small-red-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-blue-cutout.png\" >large-blue-cutout</td><td><image src=\"images/small-blue-cutout.png\" >small-blue-cutout</td><td><image src=\"images/large-blue-blank.png\" >large-blue-blank</td><td><image src=\"images/small-blue-blank.png\" >small-blue-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-gray-cutout.png\" >large-gray-cutout</td><td><image src=\"images/small-gray-cutout.png\" > small-gray-cutout</td><td><image src=\"images/large-gray-blank.png\" >large-gray-blank</td><td><image src=\"images/small-gray-blank.png\" >small-gray-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-yellow-cutout.png\" >large-yellow-cutout</td><td><image src=\"images/small-yellow-cutout.png\" >small-yellow-cutout</td><td><image src=\"images/large-yellow-blank.png\" >large-yellow-blank</td><td><image src=\"images/small-yellow-blank.png\" >small-yellow-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-purple-cutout.png\" >large-purple-cutout</td><td><image src=\"images/small-purple-cutout.png\" >small-purple-cutout</td><td><image src=\"images/large-purple-blank.png\" >large-purple-blank</td><td><image src=\"images/small-purple-blank.png\" >small-purple-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-orange-cutout.png\" >large-orange-cutout</td><td><image src=\"images/small-orange-cutout.png\" >small-orange-cutout</td><td><image src=\"images/large-orange-blank.png\" >large-orange-blank </td><td><image src=\"images/small-orange-blank.png\" >small-orange-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-green-cutout.png\" >large-green-cutout</td><td><image src=\"images/small-green-cutout.png\" >small-green-cutout</td><td><image src=\"images/large-green-blank.png\" >large-green-blank</td><td><image src=\"images/small-green-blank.png\" >small-green-blank</td>\n    </tr>\n\n    <tr>\n    <td><image src=\"images/large-black-cutout.png\" >large-black-cutout</td><td><image src=\"images/small-black-cutout.png\" >small-black-cutout</td><td><image src=\"images/large-black-blank.png\" >large-black-blank</td><td><image src=\"images/small-black-blank.png\" >small-black-blank</td>\n    </tr>\n    </table>\n* `markerLocation` :  Each markerLocation param should contain latitude, longitude pair which defines the postion of the marker.\n    * Example: `markers=icon:large-red-cutout|17.451377,78.379525|17.450419,78.381149`\n    <br /><br />\n* `markerStyles` : consists of visual attributes like size and color, which are used to display the markers on the map.\n    *  `size` : accepted values - [small, large]. Defaults to small.\n    *  `color` : accepted values - [blue, gray, red, yellow, orange, green, purple]. Defaults to red.\n    * Example: `markers=size:small|color:red|17.451377,78.379525|17.450419,78.381149`\n\n### Paths\nThe path parameter defines a set of one or more locations connected by a path to overlay on the map image. The `path` parameter takes set of values in the following format:\n\n    `path=pathStyles|pathLocation1|pathLocation2|... etc.` [See note below]\n\nBelow are the list of values that are accepted by path parameter :\n\n* `pathStyles` : consists of visual attributes to use when displaying the path.\n    *  `weight` : specifies the thickness of the path in pixels.\n    *  `color` : color of the path stroke (e.g. red, rgba(255,255,255,0.5), #0000ff)\n    *  `fillcolor` : color to use as the fill (e.g. red, rgba(255,255,255,0.5), #0000ff)\n    * Example: `path=weight:2|color:blue|fillcolor:%23add8e6|17.452945,78.380055|17.452765,78.382026`\n* `pathLocation` :  \n    * Using coordinates: Each pathLocation parameter contains latitude, longitude pair seperated by comma.\n        * Format:     `path=lat1,lon1|lat2,lon2|`\n        * Example:    ```https://maps.locationiq.com/v3/staticmap?key=<YOUR_ACCESS_TOKEN>&center=17.450419,78.381149&size=600x600&zoom=14&path=fillcolor:%2390EE90|weight:2|color:blue|17.452945,78.380055|17.452765,78.382026|17.452020,78.381375|17.452045,78.380846|17.452945,78.380055```\n    * Using an encoded polyline: Prefix with `enc:` followed by the encoded polyline string\n        * Format:     `path=enc:<encoded_polyline`\n        * Example:    ```https://maps.locationiq.com/v3/staticmap?key=<YOUR_ACCESS_TOKEN>&center=17.450419,78.381149&size=600x600&zoom=14&path=fillcolor:%2390EE90|weight:2|color:blue|enc:}woiBkrk}Mb@iKtC`CEhBsD|C```\n\nNote:\nTo avoid decoding issues when using an encoded polyline in your request, we recommend that you place the style information first, followed by the polyline inside the path variable.\n\n## Errors\n\nFor all errors except authentication errors, the Static Map API returns the following blank image in `grey` to help preserve user experience. An error code is set in the HTTP Response code as per the [Errors section](#errors).\n\n<image src=\"images/exampleblankmap.png\" width=\"480\" height=\"480\" style='padding-left:20px'>\n\nAuthentication errors will return JSON in the format specified in the Errors section."
+		},
+		{
+			"name": "Lookup API",
+			"item": [
+				{
+					"name": "General usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/lookup?key={{Your_API_Key}}&osm_ids=W345787679,N6213046588&format=json",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"lookup"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}",
+									"description": "Authentication key."
+								},
+								{
+									"key": "osm_ids",
+									"value": "W345787679,N6213046588",
+									"description": "This must contain a comma-separated list of OSM ids each prefixed with its type, one of node(N), way(W) or relation(R). Up to 3 ids can be queried at the same time."
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "Output Format. Defauts to json. Only json supported for now."
+								},
+								{
+									"key": "accept-language",
+									"value": "native",
+									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. ",
+									"disabled": true
+								},
+								{
+									"key": "addressdetails",
+									"value": "1",
+									"description": "Include a breakdown of the address into elements. Defaults to 1.",
+									"disabled": true
+								},
+								{
+									"key": "extratags",
+									"value": "1",
+									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+									"disabled": true
+								},
+								{
+									"key": "json_callback",
+									"value": "",
+									"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+									"disabled": true
+								},
+								{
+									"key": "namedetails",
+									"value": "1",
+									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "1",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
+									"disabled": true
+								},
+								{
+									"key": "normalizecity",
+									"value": "1",
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
+								},
+								{
+									"key": "postaladdress",
+									"value": "1",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "polygon_geojson",
+									"value": "1",
+									"description": "Output geometry of results in geojson format.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_kml",
+									"value": "1",
+									"description": "Output geometry of results in kml format.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_svg",
+									"value": "1",
+									"description": "Output geometry of results in svg format.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_text",
+									"value": "1",
+									"description": "Output geometry of results as a WKT.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_threshold",
+									"value": "0.2",
+									"description": "When one of the polygon_* outputs is chosen, return a simplified version of the output geometry. The parameter describes the tolerance in degrees with which the geometry may differ from the original geometry. Topology is preserved in the geometry.",
+									"disabled": true
+								},
+								{
+									"key": "statecode",
+									"value": "1",
+									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The lookup API allows querying the address and other details of one or multiple OSM objects, such as nodes, ways, or relations."
 		}
 	],
 	"event": [

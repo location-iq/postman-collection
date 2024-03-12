@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "b96a152c-60bf-419c-be70-8bfd5454358e",
-		"name": "LocationIQ Collection v1.4.0",
+		"_postman_id": "3cd92646-0f8c-48f3-b61d-a7fd65d78d73",
+		"name": "LocationIQ Collection v1.5.0",
 		"description": "LocationIQ provides flexible enterprise-grade location based solutions. We work with developers, startups and enterprises worldwide serving billions of requests everyday.\n\nEach request to LocationIQ's APIs or Map tiles needs to be authenticated with a token (also known as a key or an access token). Read more about it at https://locationiq.com/docs\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -121,6 +121,11 @@
 									"key": "polygon_text",
 									"value": "",
 									"description": "Output geometry of results as a WKT.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_threshold",
+									"value": "0.2",
 									"disabled": true
 								},
 								{
@@ -288,6 +293,12 @@
 									"key": "polygon_text",
 									"value": "",
 									"description": "Output geometry of results as a WKT.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_threshold",
+									"value": "0.2",
+									"description": "When one of the polygon_* outputs is chosen, return a simplified version of the output geometry. The parameter describes the tolerance in degrees with which the geometry may differ from the original geometry. Topology is preserved in the geometry.",
 									"disabled": true
 								},
 								{
@@ -484,6 +495,12 @@
 									"disabled": true
 								},
 								{
+									"key": "polygon_threshold",
+									"value": "0.2",
+									"description": "When one of the polygon_* outputs is chosen, return a simplified version of the output geometry. The parameter describes the tolerance in degrees with which the geometry may differ from the original geometry. Topology is preserved in the geometry.",
+									"disabled": true
+								},
+								{
 									"key": "extratags",
 									"value": "0",
 									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
@@ -648,6 +665,12 @@
 									"key": "polygon_text",
 									"value": "",
 									"description": "Output geometry of results as a WKT.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_threshold",
+									"value": "0.2",
+									"description": "When one of the polygon_* outputs is chosen, return a simplified version of the output geometry. The parameter describes the tolerance in degrees with which the geometry may differ from the original geometry. Topology is preserved in the geometry.",
 									"disabled": true
 								},
 								{
@@ -832,6 +855,12 @@
 									"disabled": true
 								},
 								{
+									"key": "polygon_threshold",
+									"value": "0.2",
+									"description": "When one of the polygon_* outputs is chosen, return a simplified version of the output geometry. The parameter describes the tolerance in degrees with which the geometry may differ from the original geometry. Topology is preserved in the geometry.",
+									"disabled": true
+								},
+								{
 									"key": "extratags",
 									"value": "0",
 									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
@@ -876,143 +905,6 @@
 							]
 						},
 						"description": "It takes latitude and longitude as input to reverse geocode.\n\n> Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
-					},
-					"response": []
-				},
-				{
-					"name": "Using OSM ID & Type",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/reverse?key={{Your_API_Key}}&osm_type=W&osm_id=34633854&format=json",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								"reverse"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}",
-									"description": "Authentication key."
-								},
-								{
-									"key": "osm_type",
-									"value": "W",
-									"description": "A specific osm type, node / way / relation to search an address for [ N, W , R ], only applicable when neither (lat lon) is present. That is use in combination osm_id and osm_type or lat and lon to get result"
-								},
-								{
-									"key": "osm_id",
-									"value": "34633854",
-									"description": "A specific osm node / way / relation to return an address for"
-								},
-								{
-									"key": "zoom",
-									"value": "",
-									"description": "Level of detail required where 0 is country and 18 is house/building. Defaults to 18. A lower number increases speed of the server's response. ",
-									"disabled": true
-								},
-								{
-									"key": "format",
-									"value": "json",
-									"description": "Output Format. Defaults to xml"
-								},
-								{
-									"key": "addressdetails",
-									"value": "1",
-									"description": "Include a breakdown of the address into elements. Defaults to 1.",
-									"disabled": true
-								},
-								{
-									"key": "namedetails",
-									"value": "0",
-									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
-									"disabled": true
-								},
-								{
-									"key": "accept_language",
-									"value": "en",
-									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. ",
-									"disabled": true
-								},
-								{
-									"key": "json_callback",
-									"value": "",
-									"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_geojson",
-									"value": "",
-									"description": "Output geometry of results in geojson format.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_kml",
-									"value": "",
-									"description": "Output geometry of results in kml format.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_svg",
-									"value": "",
-									"description": "Output geometry of results in svg format.",
-									"disabled": true
-								},
-								{
-									"key": "polygon_text",
-									"value": "",
-									"description": "Output geometry of results as a WKT.",
-									"disabled": true
-								},
-								{
-									"key": "extratags",
-									"value": "0",
-									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
-									"disabled": true
-								},
-								{
-									"key": "normalizecity",
-									"value": "1",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
-									"disabled": true
-								},
-								{
-									"key": "statecode",
-									"value": "0",
-									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
-									"disabled": true
-								},
-								{
-									"key": "showdistance",
-									"value": "0",
-									"description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]",
-									"disabled": true
-								},
-								{
-									"key": "postaladdress",
-									"value": "0",
-									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
-									"disabled": true
-								},
-								{
-									"key": "normalizeaddress",
-									"value": "0",
-									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
-									"disabled": true
-								},
-								{
-									"key": "normalizecity",
-									"value": "0",
-									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0.",
-									"disabled": true
-								}
-							]
-						},
-						"description": "It takes OSM ID & Type as input.\n\n> Reverse geocoding with OSM ID & Type is the process of converting an object represented by OSM ID and Type ( node, way and relations [N,W,R] ) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country."
 					},
 					"response": []
 				}
@@ -1334,6 +1226,131 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Lookup API",
+			"item": [
+				{
+					"name": "General Usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/lookup?key={{Your_API_Key}}&osm_ids=W345787679,N6213046588,R1972688&format=json",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"lookup"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}",
+									"description": "Authentication key."
+								},
+								{
+									"key": "osm_ids",
+									"value": "W345787679,N6213046588,R1972688",
+									"description": "This must contain a comma-separated list of OSM ids each prefixed with its type, one of node(N), way(W) or relation(R). Up to 3 ids can be queried at the same time."
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "Output Format. Defauts to json. Only json supported for now."
+								},
+								{
+									"key": "accept-language",
+									"value": "native",
+									"description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native. Either uses standard rfc2616 accept-language string or a simple comma separated list of language codes. ",
+									"disabled": true
+								},
+								{
+									"key": "addressdetails",
+									"value": "1",
+									"description": "Include a breakdown of the address into elements. Defaults to 1.",
+									"disabled": true
+								},
+								{
+									"key": "extratags",
+									"value": "1",
+									"description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+									"disabled": true
+								},
+								{
+									"key": "json_callback",
+									"value": "",
+									"description": "Wrap json output in a callback function (JSONP) i.e. <string>(<json>). Only has an effect for JSON output formats.",
+									"disabled": true
+								},
+								{
+									"key": "namedetails",
+									"value": "1",
+									"description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+									"disabled": true
+								},
+								{
+									"key": "normalizeaddress",
+									"value": "1",
+									"description": "Makes parsing of the address object easier by returning a predictable and defined list of elements. ( Refer \"https://locationiq.com/docs\" for complete list of elements ) Defaults to 0 for backward compatibility. We recommend setting this to 1 for new projects.",
+									"disabled": true
+								},
+								{
+									"key": "normalizecity",
+									"value": "1",
+									"description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 0. [ 0,1 ]",
+									"disabled": true
+								},
+								{
+									"key": "postaladdress",
+									"value": "1",
+									"description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Belgium, France, Germany, Italy, Spain and United Kingdom. Defaults to 0",
+									"disabled": true
+								},
+								{
+									"key": "polygon_geojson",
+									"value": "1",
+									"description": "Output geometry of results in geojson format.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_kml",
+									"value": "1",
+									"description": "Output geometry of results in kml format.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_svg",
+									"value": "1",
+									"description": "Output geometry of results in svg format.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_text",
+									"value": "1",
+									"description": "Output geometry of results as a WKT.",
+									"disabled": true
+								},
+								{
+									"key": "polygon_threshold",
+									"value": "0.2",
+									"description": "When one of the polygon_* outputs is chosen, return a simplified version of the output geometry. The parameter describes the tolerance in degrees with which the geometry may differ from the original geometry. Topology is preserved in the geometry.",
+									"disabled": true
+								},
+								{
+									"key": "statecode",
+									"value": "1",
+									"description": "Adds state or province code when available to the statecode key inside the address object. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0  [ 0,1 ]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The lookup API allows querying the address and other details of one or multiple OSM objects, such as nodes, ways, or relations."
 		},
 		{
 			"name": "Routing APIs",
@@ -2280,57 +2297,6 @@
 			]
 		},
 		{
-			"name": "Balance API",
-			"item": [
-				{
-					"name": "General usage",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance?key={{Your_API_Key}}",
-							"host": [
-								"{{LocationIQ_Endpoint_URL}}"
-							],
-							"path": [
-								"v1",
-								"balance"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "{{Your_API_Key}}"
-								}
-							]
-						},
-						"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC)."
-					},
-					"response": []
-				}
-			],
-			"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC).",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
 			"name": "Nearby API",
 			"item": [
 				{
@@ -2736,6 +2702,57 @@
 			]
 		},
 		{
+			"name": "Balance API",
+			"item": [
+				{
+					"name": "General usage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocationIQ_Endpoint_URL}}/v1/balance?key={{Your_API_Key}}",
+							"host": [
+								"{{LocationIQ_Endpoint_URL}}"
+							],
+							"path": [
+								"v1",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Your_API_Key}}"
+								}
+							]
+						},
+						"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC)."
+					},
+					"response": []
+				}
+			],
+			"description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC).",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Static Maps API",
 			"item": [
 				{
@@ -3037,6 +3054,18 @@
 											"key": "path",
 											"value": "17.452638,78.380332|17.452550,78.38026|17.452033,78.380734|17.4519517,78.381078|17.452008,78.381426|17.452524,78.38187",
 											"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters"
+										},
+										{
+											"key": "linejoin",
+											"value": "round",
+											"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+											"disabled": true
+										},
+										{
+											"key": "linecap",
+											"value": "round",
+											"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
+											"disabled": true
 										}
 									]
 								}
@@ -3112,6 +3141,18 @@
 											"key": "path",
 											"value": "weight:4|color:blue|17.452638,78.380332|17.452550,78.38026|17.452033,78.380734|17.4519517,78.381078|17.452008,78.381426|17.452524,78.38187",
 											"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters"
+										},
+										{
+											"key": "linejoin",
+											"value": "round",
+											"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+											"disabled": true
+										},
+										{
+											"key": "linecap",
+											"value": "round",
+											"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
+											"disabled": true
 										}
 									]
 								}
@@ -3187,6 +3228,18 @@
 											"key": "path",
 											"value": "weight:4|color:blue|enc:_voiBatk}MPLfB}ANeAKeAeBwA",
 											"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters"
+										},
+										{
+											"key": "linejoin",
+											"value": "round",
+											"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+											"disabled": true
+										},
+										{
+											"key": "linecap",
+											"value": "round",
+											"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
+											"disabled": true
 										}
 									]
 								}
@@ -3264,6 +3317,18 @@
 									"key": "path",
 									"value": "fillcolor:#add8e6|weight:1|color:blue|17.452945,78.380055|17.452765,78.382026|17.452020,78.381375|17.452045,78.380846|17.452945,78.380055",
 									"description": "Defines one or more paths to draw on the map. Path parameters are seperated by Pipe character. See below for the full list of parameters",
+									"disabled": true
+								},
+								{
+									"key": "linejoin",
+									"value": "round",
+									"description": "Style for joining successive segments of all paths when the direction changes. Can be `bevel`, `round` or `miter`. Default is `miter`.",
+									"disabled": true
+								},
+								{
+									"key": "linecap",
+									"value": "round",
+									"description": "Style for start and end points of path. Can be `butt`, `round` or `square`. Default is `butt`.",
 									"disabled": true
 								}
 							]
